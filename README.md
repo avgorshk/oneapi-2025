@@ -403,3 +403,42 @@ std::vector<float> GemmMklONEAPI(
     // Place your implementation here
 }
 ```
+
+# Results
+## 1_permutations_cxx (10240 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.8951**|
+
+## 2_integral_oneapi (65536 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.4682**|
+
+## 3_jacobi_acc_oneapi (4096 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.6595**|
+
+## 4_jacobi_dev_oneapi (4096 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.6662**|
+
+## 5_jacobi_shared_oneapi (4096 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.6341**|
+
+## 6_gemm_block_oneapi (3072 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.8759**|
+
+## 7_gemm_mkl_oneapi (3072 elements)
+|Group|Name|Result|
+|-----|----|------|
+|**REF**|**REF**|**0.2893**|
+
+# Tasks Done
+**Total Passed: 0**
