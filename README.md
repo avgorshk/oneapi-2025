@@ -409,6 +409,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |**REF**|**REF**|**0.8951**|
+|3821B1FI3|sadikov_damir|TOO SLOW|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
@@ -441,4 +442,11 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.2893**|
 
 # Tasks Done
+## 3821B1FI3
+|Group|Name|Passed|
+|-----|----|------|
+|3821B1FI3|sadikov_damir|0/7|
+
+Passed: 0
+
 **Total Passed: 0**
