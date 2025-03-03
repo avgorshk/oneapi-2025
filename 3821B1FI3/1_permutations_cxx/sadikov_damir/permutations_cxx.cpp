@@ -3,14 +3,20 @@
 #include <algorithm>
 
 void Permutations(dictionary_t& dictionary) {
-    for (auto& [s1, v1] : dictionary) {
-        for (auto& [s2, v2] : dictionary) {
-            if (s1 != s2 && std::is_permutation(s1.begin(), s1.end(), s2.begin(), s2.end())) {
-                v1.push_back(s2);
-            }
-        }
+    dictionary_t perm;
+    for (auto& [s, v] : dictionary) {
+        std::string s_sorted = s;
+        std::sort(s_sorted.begin(), s_sorted.end());
+        perm[s_sorted].push_back(s);
     }
     for (auto& [s, v] : dictionary) {
-        std::reverse(v.begin(), v.end());
+        std::string s_sorted = s;
+        std::sort(s_sorted.begin(), s_sorted.end());
+        auto& V = perm[s_sorted];
+        for (auto it = V.rbegin(); it != V.rend(); it++) {
+            if (*it != s) {
+                v.push_back(*it);
+            }
+        }
     }
 }
