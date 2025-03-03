@@ -408,6 +408,7 @@ std::vector<float> GemmMklONEAPI(
 ## 1_permutations_cxx (10240 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|zakharov_artem|0.0067|
 |**REF**|**REF**|**0.8951**|
 |3821B1FI3|sadikov_damir|TOO SLOW|
 
@@ -442,6 +443,13 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.2893**|
 
 # Tasks Done
+## 3821B1FI2
+|Group|Name|Passed|
+|-----|----|------|
+|3821B1FI2|zakharov_artem|1/7|
+
+Passed: 0
+
 ## 3821B1FI3
 |Group|Name|Passed|
 |-----|----|------|
