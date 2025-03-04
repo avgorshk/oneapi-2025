@@ -12,7 +12,7 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
                 float xR = start + (end - start) / count * (i.get(0) + 1);
                 float yL = start + (end - start) / count * i.get(1);
                 float yR = start + (end - start) / count * (i.get(1) + 1);
-                sum += sinf((xL + xR) / 2.0f) * cosf((yL + yR) / 2.0f) * (xR - xL) * (yR - yL);
+                sum += sycl::sin((xL + xR) / 2.0f) * sycl::cos((yL + yR) / 2.0f) * (xR - xL) * (yR - yL);
                 });
             });
         e.wait();
