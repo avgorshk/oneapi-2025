@@ -1,0 +1,7 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/2_integral_oneapi/sadikov_damir/integral_oneapi.cpp:15:24: error: use of undeclared identifier 'sinf'
+   15 |                 sum += sinf((xL + xR) / 2.0f) * cosf((yL + yR) / 2.0f) * (xR - xL) * (yR - yL);
+      |                        ^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/2_integral_oneapi/sadikov_damir/integral_oneapi.cpp:15:49: error: use of undeclared identifier 'cosf'
+   15 |                 sum += sinf((xL + xR) / 2.0f) * cosf((yL + yR) / 2.0f) * (xR - xL) * (yR - yL);
+      |                                                 ^
+2 errors generated.
