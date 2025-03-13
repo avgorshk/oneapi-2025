@@ -433,6 +433,7 @@ std::vector<float> GemmMklONEAPI(
 ## 5_jacobi_shared_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI3|sadikov_damir|0.2724|
 |**REF**|**REF**|**0.6341**|
 
 ## 6_gemm_block_oneapi (3072 elements)
@@ -456,7 +457,7 @@ Passed: 0
 ## 3821B1FI3
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI3|sadikov_damir|4/7|
+|3821B1FI3|sadikov_damir|5/7|
 
 Passed: 0
 
