@@ -440,6 +440,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |**REF**|**REF**|**0.8759**|
+|3821B1FI3|sadikov_damir|BUILD FAILED|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
 |Group|Name|Result|
