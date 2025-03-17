@@ -1,4 +1,4 @@
-#include "block_gemm_oneapi.h"
+#include "gemm_block_oneapi.h"
 #include <cassert>
 
 std::vector<float> GemmBlockONEAPI(
