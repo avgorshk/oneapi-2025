@@ -342,7 +342,7 @@ Each matrix must be stored in a linear array by rows, so that `a.size()==size*si
 For simplicity, let's consider matrix size is always power of 2 and all matricies are square.
 
 Two files are expected to be uploaded:
-- block_gemm_oneapi.h:
+- gemm_block_oneapi.h:
 ```cpp
 #ifndef __GEMM_BLOCK_ONEAPI_H
 #define __GEMM_BLOCK_ONEAPI_H
@@ -357,9 +357,9 @@ std::vector<float> GemmBlockONEAPI(
 
 #endif  // __GEMM_BLOCK_ONEAPI_H
 ```
-- block_gemm_oneapi.cpp:
+- gemm_block_oneapi.cpp:
 ```cpp
-#include "block_gemm_oneapi.h"
+#include "gemm_block_oneapi.h"
 
 std::vector<float> GemmBlockONEAPI(
         const std::vector<float> a, const std::vector<float> b,
