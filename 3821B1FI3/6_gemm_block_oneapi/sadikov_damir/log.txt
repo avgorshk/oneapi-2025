@@ -1,1 +1,2 @@
-Source file /home/crazyproger/sandbox/oneapi-2025/3821B1FI3/6_gemm_block_oneapi/sadikov_damir/gemm_block_oneapi.cpp not found
+terminate called after throwing an instance of 'sycl::_V1::exception'
+  what():  Total number of work-items in a work-group cannot exceed 512 for this kernel
