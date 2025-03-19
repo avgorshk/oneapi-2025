@@ -411,28 +411,33 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zakharov_artem|0.0067|
 |3821B1FI3|sadikov_damir|0.0093|
 |**REF**|**REF**|**0.8951**|
+|3821B1FI3|sharapov_georgiy|TEST FAILED|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
 |-----|----|------|
 |**REF**|**REF**|**0.4682**|
+|3821B1FI3|sharapov_georgiy|1.4472|
 |3821B1FI3|sadikov_damir|1.4479|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI3|sharapov_georgiy|0.2747|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
 
 ## 4_jacobi_dev_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI3|sharapov_georgiy|0.2053|
 |3821B1FI3|sadikov_damir|0.2827|
 |**REF**|**REF**|**0.6662**|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI3|sharapov_georgiy|0.1545|
 |3821B1FI3|sadikov_damir|0.2724|
 |**REF**|**REF**|**0.6341**|
 
@@ -440,6 +445,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |**REF**|**REF**|**0.8759**|
+|3821B1FI3|sharapov_georgiy|0.8987|
 |3821B1FI3|sadikov_damir|0.9324|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
@@ -459,6 +465,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|sadikov_damir|6/7|
+|3821B1FI3|sharapov_georgiy|5/7|
 
 Passed: 0
 
