@@ -5,7 +5,7 @@ std::vector<float> GemmBlockONEAPI(
     const std::vector<float> a, const std::vector<float> b,
     size_t size, sycl::device device) {
 
-    constexpr int BLOCK_SZ = 32;
+    constexpr int BLOCK_SZ = 16;
     // expected that size % BLOCK_SZ == 0
     assert(size % BLOCK_SZ == 0);
 
