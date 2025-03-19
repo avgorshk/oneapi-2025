@@ -19,7 +19,7 @@ void Permutations(dictionary_t &dictionary) {
 
     if (permutations[sortedKey].size() > 1) {
       perm = permutations[sortedKey];
-      perm.erase(std::remove(perm.begin(), perm.end(), sortedKey), perm.end());
+      perm.erase(std::remove(perm.begin(), perm.end(), key), perm.end());
       std::sort(perm.rbegin(), perm.rend());
     }
   }
