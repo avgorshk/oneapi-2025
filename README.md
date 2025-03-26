@@ -453,6 +453,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
+|3821B1FI3|sharapov_georgiy|TEST FAILED|
 
 # Tasks Done
 ## 3821B1FI2
