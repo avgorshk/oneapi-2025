@@ -18,7 +18,7 @@ std::vector<float> GemmMklONEAPI(const std::vector<float> a,
     auto nontrans = oneapi::mkl::transpose::nontrans;
 
     oneapi::mkl::blas::row_major::gemm(queue, nontrans, nontrans, size, size,
-                                       size, 1, buf_a, size, buf_a, size, 0,
+                                       size, 1, buf_a, size, buf_b, size, 0,
                                        buf_ans, size);
   }
 
