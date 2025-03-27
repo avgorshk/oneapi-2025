@@ -453,7 +453,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
-|3821B1FI3|sharapov_georgiy|TEST FAILED|
+|3821B1FI3|sharapov_georgiy|0.8169|
 
 # Tasks Done
 ## 3821B1FI2
@@ -467,8 +467,8 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|sadikov_damir|**7/7**|
-|3821B1FI3|sharapov_georgiy|6/7|
+|3821B1FI3|sharapov_georgiy|**7/7**|
 
-Passed: 1
+Passed: 2
 
-**Total Passed: 1**
+**Total Passed: 2**
