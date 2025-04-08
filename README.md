@@ -412,6 +412,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI3|sadikov_damir|0.0093|
 |**REF**|**REF**|**0.8951**|
+|3821B1FI3|durandin_vladimir|TOO SLOW|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
@@ -466,6 +467,7 @@ Passed: 0
 ## 3821B1FI3
 |Group|Name|Passed|
 |-----|----|------|
+|3821B1FI3|durandin_vladimir|0/7|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 
