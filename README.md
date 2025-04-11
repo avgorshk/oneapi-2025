@@ -428,6 +428,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.2747|
+|3821B1FI3|kulikov_artem|0.3709|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
 
@@ -471,7 +472,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|durandin_vladimir|1/7|
-|3821B1FI3|kulikov_artem|2/7|
+|3821B1FI3|kulikov_artem|3/7|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 
