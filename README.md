@@ -448,6 +448,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.1545|
 |3821B1FI3|sadikov_damir|0.2724|
+|3821B1FI1|bodrov_daniil|0.3076|
 |**REF**|**REF**|**0.6341**|
 
 ## 6_gemm_block_oneapi (3072 elements)
@@ -470,7 +471,7 @@ std::vector<float> GemmMklONEAPI(
 ## 3821B1FI1
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI1|bodrov_daniil|3/7|
+|3821B1FI1|bodrov_daniil|4/7|
 
 Passed: 0
 
