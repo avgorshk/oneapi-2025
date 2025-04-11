@@ -7,7 +7,7 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
     sycl::queue q(device);
 
     {
-        buffer<float> sum_buf(&local_res, 1);
+        sycl::buffer<float> sum_buf(&local_res, 1);
 
         q.submit([&](sycl::handler &cgh) {
              auto reduction = sycl::reduction(sum_buf, cgh, sycl::plus<>());
