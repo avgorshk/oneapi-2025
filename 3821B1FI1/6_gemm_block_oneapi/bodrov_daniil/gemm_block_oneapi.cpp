@@ -1,83 +1,82 @@
 #include "gemm_block_oneapi.h"
-#include <cmath>
+#include <vector>
 
 std::vector<float> GemmBlockONEAPI(
-        const std::vector<float> a, const std::vector<float> b,
-        size_t size, sycl::device device) {
-    // Определяем оптимальный размер блока
-    // Для простоты берем 16, но в реальных приложениях это значение 
-    // следует подбирать экспериментально для конкретной архитектуры
-    const size_t BLOCK_SIZE = 16;
+    const std::vector<float> a, const std::vector<float> b,
+    size_t size, sycl::device device) {
+    constexpr size_t TILE_SIZE = 64;
+    constexpr size_t SUBTILE_SIZE = 16;
     
-    // Создаем очередь SYCL на указанном устройстве
-    sycl::queue queue(device);
+    std::vector<float> result(size * size, 0.0f);
+    sycl::queue q(device, sycl::property::queue::in_order());
     
-    // Создаем вектор для результата
-    std::vector<float> c(size * size, 0.0f);
+    // Создаем буферы для матриц
+    sycl::buffer<float, 2> buf_a(a.data(), sycl::range<2>(size, size));
+    sycl::buffer<float, 2> buf_b(b.data(), sycl::range<2>(size, size));
+    sycl::buffer<float, 2> buf_c(result.data(), sycl::range<2>(size, size));
     
-    // Создаем буферы для работы с данными
-    sycl::buffer<float, 1> buf_a(a.data(), a.size());
-    sycl::buffer<float, 1> buf_b(b.data(), b.size());
-    sycl::buffer<float, 1> buf_c(c.data(), c.size());
+    // Вычисляем количество блоков
+    const size_t num_tiles = (size + TILE_SIZE - 1) / TILE_SIZE;
     
-    // Количество блоков в одном измерении матрицы
-    size_t num_blocks = size / BLOCK_SIZE;
-    
-    // Выполняем блочное умножение матриц
-    for (size_t block_i = 0; block_i < num_blocks; block_i++) {
-        for (size_t block_j = 0; block_j < num_blocks; block_j++) {
-            // Для каждого блока результирующей матрицы C(I,J)
-            // выполняем суммирование произведений блоков A(I,K) и B(K,J)
-            for (size_t block_k = 0; block_k < num_blocks; block_k++) {
-                queue.submit([&](sycl::handler& h) {
-                    auto a_acc = buf_a.get_access<sycl::access::mode::read>(h);
-                    auto b_acc = buf_b.get_access<sycl::access::mode::read>(h);
-                    auto c_acc = buf_c.get_access<sycl::access::mode::read_write>(h);
+    q.submit([&](sycl::handler& h) {
+        auto a_acc = buf_a.get_access<sycl::access::mode::read>(h);
+        auto b_acc = buf_b.get_access<sycl::access::mode::read>(h);
+        auto c_acc = buf_c.get_access<sycl::access::mode::write>(h);
+        
+        // Выделяем локальную память для подблоков
+        sycl::local_accessor<float, 2> local_a(sycl::range<2>(TILE_SIZE, SUBTILE_SIZE), h);
+        sycl::local_accessor<float, 2> local_b(sycl::range<2>(SUBTILE_SIZE, TILE_SIZE), h);
+        
+        h.parallel_for(sycl::nd_range<2>(
+            sycl::range<2>(num_tiles * TILE_SIZE, num_tiles * TILE_SIZE),
+            sycl::range<2>(TILE_SIZE, TILE_SIZE)
+        ), [=](sycl::nd_item<2> item) {
+            const size_t local_row = item.get_local_id(0);
+            const size_t local_col = item.get_local_id(1);
+            const size_t global_row = item.get_global_id(0);
+            const size_t global_col = item.get_global_id(1);
+            
+            if (global_row >= size || global_col >= size) return;
+            
+            float sum = 0.0f;
+            
+            // Обрабатываем матрицу блоками
+            for (size_t tile = 0; tile < num_tiles; ++tile) {
+                // Загружаем подблоки в локальную память
+                for (size_t subtile = 0; subtile < TILE_SIZE; subtile += SUBTILE_SIZE) {
+                    // Загружаем подблок A
+                    if (local_col < SUBTILE_SIZE && 
+                        global_row < size && 
+                        tile * TILE_SIZE + subtile + local_col < size) {
+                        local_a[local_row][local_col] = 
+                            a_acc[global_row][tile * TILE_SIZE + subtile + local_col];
+                    }
                     
-                    // Используем локальную память для хранения блоков
-                    sycl::accessor<float, 2, sycl::access::mode::read_write, sycl::access::target::local>
-                        a_local(sycl::range<2>(BLOCK_SIZE, BLOCK_SIZE), h);
-                    sycl::accessor<float, 2, sycl::access::mode::read_write, sycl::access::target::local>
-                        b_local(sycl::range<2>(BLOCK_SIZE, BLOCK_SIZE), h);
+                    // Загружаем подблок B
+                    if (local_row < SUBTILE_SIZE && 
+                        tile * TILE_SIZE + subtile + local_row < size && 
+                        global_col < size) {
+                        local_b[local_row][local_col] = 
+                            b_acc[tile * TILE_SIZE + subtile + local_row][global_col];
+                    }
                     
-                    h.parallel_for(
-                        sycl::nd_range<2>(
-                            sycl::range<2>(BLOCK_SIZE, BLOCK_SIZE),
-                            sycl::range<2>(BLOCK_SIZE, BLOCK_SIZE)
-                        ),
-                        [=](sycl::nd_item<2> item) {
-                            // Локальные индексы внутри блока
-                            size_t local_i = item.get_local_id(0);
-                            size_t local_j = item.get_local_id(1);
-                            
-                            // Глобальные индексы для блока результата C(I,J)
-                            size_t global_i = block_i * BLOCK_SIZE + local_i;
-                            size_t global_j = block_j * BLOCK_SIZE + local_j;
-                            
-                            // Загружаем блоки A(I,K) и B(K,J) в локальную память
-                            a_local[local_i][local_j] = a_acc[global_i * size + (block_k * BLOCK_SIZE + local_j)];
-                            b_local[local_i][local_j] = b_acc[(block_k * BLOCK_SIZE + local_i) * size + global_j];
-                            
-                            // Ждем, чтобы убедиться, что все данные загружены
-                            item.barrier(sycl::access::fence_space::local_space);
-                            
-                            // Выполняем умножение блока A(I,K) на блок B(K,J)
-                            float sum = 0.0f;
-                            for (size_t k = 0; k < BLOCK_SIZE; k++) {
-                                sum += a_local[local_i][k] * b_local[k][local_j];
-                            }
-                            
-                            // Прибавляем результат к блоку C(I,J)
-                            c_acc[global_i * size + global_j] += sum;
-                        }
-                    );
-                });
+                    item.barrier(sycl::access::fence_space::local_space);
+                    
+                    // Умножаем подблоки с разверткой цикла
+                    #pragma unroll
+                    for (size_t k = 0; k < SUBTILE_SIZE; ++k) {
+                        sum += local_a[local_row][k] * local_b[k][local_col];
+                    }
+                    
+                    item.barrier(sycl::access::fence_space::local_space);
+                }
             }
-        }
-    }
+            
+            // Записываем результат
+            c_acc[global_row][global_col] = sum;
+        });
+    });
     
-    // Ждем завершения всех операций
-    queue.wait();
-    
-    return c;
+    q.wait();
+    return result;
 } 
