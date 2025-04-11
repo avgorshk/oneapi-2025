@@ -408,6 +408,7 @@ std::vector<float> GemmMklONEAPI(
 ## 1_permutations_cxx (10240 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|bodrov_daniil|0.0054|
 |3821B1FI2|zakharov_artem|0.0067|
 |3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI3|kulikov_artem|0.0080|
@@ -469,7 +470,7 @@ std::vector<float> GemmMklONEAPI(
 ## 3821B1FI1
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI1|bodrov_daniil|2/7|
+|3821B1FI1|bodrov_daniil|3/7|
 
 Passed: 0
 
