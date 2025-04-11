@@ -408,6 +408,7 @@ std::vector<float> GemmMklONEAPI(
 ## 1_permutations_cxx (10240 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|bodrov_daniil|0.0054|
 |3821B1FI2|zakharov_artem|0.0067|
 |3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI3|kulikov_artem|0.0080|
@@ -420,14 +421,17 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.4682**|
 |3821B1FI3|durandin_vladimir|0.9917|
+|3821B1FI3|kulikov_artem|0.9977|
 |3821B1FI3|sharapov_georgiy|1.4472|
 |3821B1FI3|sadikov_damir|1.4479|
-|3821B1FI3|kulikov_artem|BUILD FAILED|
+|3821B1FI1|bodrov_daniil|RUN FAILED|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.2747|
+|3821B1FI1|bodrov_daniil|0.3032|
+|3821B1FI3|kulikov_artem|0.3709|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
 
@@ -436,6 +440,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.2053|
 |3821B1FI3|sadikov_damir|0.2827|
+|3821B1FI1|bodrov_daniil|0.3388|
 |**REF**|**REF**|**0.6662**|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
@@ -443,6 +448,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.1545|
 |3821B1FI3|sadikov_damir|0.2724|
+|3821B1FI1|bodrov_daniil|0.3076|
 |**REF**|**REF**|**0.6341**|
 
 ## 6_gemm_block_oneapi (3072 elements)
@@ -451,6 +457,7 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.8759**|
 |3821B1FI3|sharapov_georgiy|0.8987|
 |3821B1FI3|sadikov_damir|0.9324|
+|3821B1FI1|bodrov_daniil|TOO SLOW|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
 |Group|Name|Result|
@@ -458,8 +465,16 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
 |3821B1FI3|sharapov_georgiy|0.8169|
+|3821B1FI1|bodrov_daniil|TEST FAILED|
 
 # Tasks Done
+## 3821B1FI1
+|Group|Name|Passed|
+|-----|----|------|
+|3821B1FI1|bodrov_daniil|4/7|
+
+Passed: 0
+
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
@@ -471,7 +486,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|durandin_vladimir|1/7|
-|3821B1FI3|kulikov_artem|1/7|
+|3821B1FI3|kulikov_artem|3/7|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 
