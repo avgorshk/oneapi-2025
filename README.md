@@ -420,9 +420,9 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.4682**|
 |3821B1FI3|durandin_vladimir|0.9917|
+|3821B1FI3|kulikov_artem|0.9977|
 |3821B1FI3|sharapov_georgiy|1.4472|
 |3821B1FI3|sadikov_damir|1.4479|
-|3821B1FI3|kulikov_artem|BUILD FAILED|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
@@ -471,7 +471,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|durandin_vladimir|1/7|
-|3821B1FI3|kulikov_artem|1/7|
+|3821B1FI3|kulikov_artem|2/7|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 
