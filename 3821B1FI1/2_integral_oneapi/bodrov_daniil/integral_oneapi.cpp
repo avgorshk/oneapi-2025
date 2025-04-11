@@ -1,54 +1,49 @@
 #include "integral_oneapi.h"
-#include <cmath>
 
 float IntegralONEAPI(float start, float end, int count, sycl::device device) {
-    // Шаг интегрирования
-    float step = (end - start) / count;
-    float area = step * step;
-    
-    // Создаем очередь на указанном устройстве
-    sycl::queue queue(device);
-    
-    // Общее количество прямоугольников
-    int total_points = count * count;
-    
-    // Буфер для результатов
-    float* partial_results = new float[total_points];
-    for (int i = 0; i < total_points; i++) {
-        partial_results[i] = 0.0f;
-    }
-    
-    {
-        // Создаем буфер для результатов вычислений
-        sycl::buffer<float, 1> result_buf(partial_results, total_points);
+    const float step = (end - start) / count;
+    const float area = step * step;
+    float result = 0.0f;
+
+    try {
+        sycl::queue q(device);
         
-        // Вычисляем значения функции во всех точках
-        queue.submit([&](sycl::handler& h) {
-            auto result_accessor = result_buf.get_access<sycl::access::mode::write>(h);
+        // Создаем буфер для результата
+        sycl::buffer<float, 1> result_buf(&result, 1);
+        
+        // Вычисляем интеграл
+        q.submit([&](sycl::handler& h) {
+            auto result_acc = result_buf.get_access<sycl::access::mode::write>(h);
             
-            h.parallel_for(sycl::range<1>(total_points), [=](sycl::id<1> idx) {
-                // Получаем индексы (i,j) из линейного индекса
-                int i = idx[0] % count;
-                int j = idx[0] / count;
+            // Используем nd_range для лучшего контроля над работой групп
+            h.parallel_for(sycl::nd_range<2>(
+                sycl::range<2>(count, count),
+                sycl::range<2>(16, 16)  // Размер рабочей группы
+            ), [=](sycl::nd_item<2> item) {
+                const int i = item.get_global_id(0);
+                const int j = item.get_global_id(1);
                 
-                // Вычисляем координаты средней точки прямоугольника
-                float x_mid = start + (i + 0.5f) * step;
-                float y_mid = start + (j + 0.5f) * step;
+                // Вычисляем координаты центра прямоугольника
+                const float x = start + (i + 0.5f) * step;
+                const float y = start + (j + 0.5f) * step;
                 
-                // Вычисляем значение функции и умножаем на площадь прямоугольника
-                result_accessor[idx] = sin(x_mid) * cos(y_mid) * area;
+                // Атомарно добавляем результат
+                sycl::atomic_ref<float, sycl::memory_order::relaxed,
+                               sycl::memory_scope::device,
+                               sycl::access::address_space::global_space>
+                    result_ref(result_acc[0]);
+                result_ref.fetch_add(sycl::sin(x) * sycl::cos(y) * area);
             });
         }).wait();
+        
+        // Получаем результат
+        auto result_acc = result_buf.get_access<sycl::access::mode::read>();
+        result = result_acc[0];
+        
+    } catch (const sycl::exception& e) {
+        std::cerr << "SYCL Exception: " << e.what() << std::endl;
+        throw;
     }
-    
-    // Суммируем результаты на хосте
-    float result = 0.0f;
-    for (int i = 0; i < total_points; i++) {
-        result += partial_results[i];
-    }
-    
-    // Освобождаем память
-    delete[] partial_results;
     
     return result;
 }
