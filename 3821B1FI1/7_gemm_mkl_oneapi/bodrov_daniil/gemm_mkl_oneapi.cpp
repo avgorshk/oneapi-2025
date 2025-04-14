@@ -7,18 +7,16 @@ std::vector<float> GemmMklONEAPI(
     sycl::queue q(device, sycl::property::queue::in_order());
     std::vector<float> result(size * size);
     
-    sycl::buffer<float, 1> matrix_a(a.data(), sycl::range<1>(a.size()),
-        {sycl::property::buffer::use_host_ptr()});
-    sycl::buffer<float, 1> matrix_b(b.data(), sycl::range<1>(b.size()),
-        {sycl::property::buffer::use_host_ptr()});
-    sycl::buffer<float, 1> matrix_c(result.data(), sycl::range<1>(result.size()),
-        {sycl::property::buffer::use_host_ptr()});
+    // Create buffers
+    sycl::buffer<float, 1> matrix_a(a.data(), sycl::range<1>(a.size()));
+    sycl::buffer<float, 1> matrix_b(b.data(), sycl::range<1>(b.size()));
+    sycl::buffer<float, 1> matrix_c(result.data(), sycl::range<1>(result.size()));
     
     try {
         oneapi::mkl::blas::column_major::gemm(
             q,
-            oneapi::mkl::transpose::nontrans,
-            oneapi::mkl::transpose::nontrans,
+            oneapi::mkl::transpose::trans,
+            oneapi::mkl::transpose::trans,
             size,
             size,
             size,
