@@ -4,7 +4,7 @@
 std::vector<float> GemmBlockONEAPI(
     const std::vector<float> a, const std::vector<float> b,
     size_t size, sycl::device device) {
-    constexpr size_t TILE_SIZE = 64;
+    constexpr size_t TILE_SIZE = 16;
     constexpr size_t SUBTILE_SIZE = 16;
     
     std::vector<float> result(size * size, 0.0f);
