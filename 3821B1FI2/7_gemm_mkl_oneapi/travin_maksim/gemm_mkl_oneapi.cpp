@@ -1,5 +1,7 @@
 #include "gemm_mkl_oneapi.h"
 
+#include <oneapi/mkl.hpp>
+
 std::vector<float> GemmMklONEAPI(
     const std::vector<float> a, const std::vector<float> b,
     size_t size, sycl::device device) {
