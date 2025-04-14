@@ -1,1 +1,1 @@
-Incorrect results, test input_128_1.bin, difference 0.5527070934573202
+Incorrect results, test input_128_1.bin, difference 0.526534808846002
