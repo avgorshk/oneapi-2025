@@ -23,7 +23,7 @@ static std::vector<float> jacobi(const std::vector<float> a, const std::vector<f
       res[i] = g;
       error = std::max(error, std::abs(g - res_prev[i]));
     }
-    if (error < accuracy) {
+    if (error <= accuracy) {
       break;
     }
     error = 0.0f;
