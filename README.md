@@ -463,6 +463,7 @@ std::vector<float> GemmMklONEAPI(
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|travin_maksim|0.8332|
 |**REF**|**REF**|**0.8759**|
 |3821B1FI3|sharapov_georgiy|0.8987|
 |3821B1FI3|sadikov_damir|0.9324|
@@ -487,7 +488,7 @@ Passed: 0
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI2|travin_maksim|3/7|
+|3821B1FI2|travin_maksim|4/7|
 |3821B1FI2|zakharov_artem|1/7|
 
 Passed: 0
