@@ -474,6 +474,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
+|3821B1FI2|travin_maksim|0.7961|
 |3821B1FI3|sharapov_georgiy|0.8169|
 |3821B1FI1|bodrov_daniil|TEST FAILED|
 
@@ -488,7 +489,7 @@ Passed: 0
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI2|travin_maksim|4/7|
+|3821B1FI2|travin_maksim|5/7|
 |3821B1FI2|zakharov_artem|1/7|
 
 Passed: 0
