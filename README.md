@@ -439,6 +439,7 @@ std::vector<float> GemmMklONEAPI(
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|shipitsin_alex|0.2593|
 |3821B1FI3|sharapov_georgiy|0.2747|
 |3821B1FI1|bodrov_daniil|0.3032|
 |3821B1FI2|kazantsev_evgeny|0.3232|
@@ -492,7 +493,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI1|bodrov_daniil|5/7|
-|3821B1FI1|shipitsin_alex|1/7|
+|3821B1FI1|shipitsin_alex|2/7|
 
 Passed: 0
 
