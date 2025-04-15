@@ -414,6 +414,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulikov_artem|0.0080|
 |3821B1FI3|sadikov_damir|0.0093|
 |**REF**|**REF**|**0.8951**|
+|3821B1FI2|travin_maksim|BUILD FAILED|
 |3821B1FI3|durandin_vladimir|TOO SLOW|
 |3821B1FI3|ivanov_nikita|TEST FAILED|
 
@@ -480,6 +481,7 @@ Passed: 0
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
+|3821B1FI2|travin_maksim|0/7|
 |3821B1FI2|zakharov_artem|1/7|
 
 Passed: 0

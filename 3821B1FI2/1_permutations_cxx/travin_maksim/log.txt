@@ -1,0 +1,4 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/1_permutations_cxx/travin_maksim/permutations_cxx.cpp: In function ‘void Permutations(dictionary_t&)’:
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/1_permutations_cxx/travin_maksim/permutations_cxx.cpp:9:14: error: ‘using dictionary_t = class std::map<std::__cxx11::basic_string<char>, std::vector<std::__cxx11::basic_string<char> > >’ {aka ‘class std::map<std::__cxx11::basic_string<char>, std::vector<std::__cxx11::basic_string<char> > >’} has no member named ‘reserve’
+    9 |     temp_map.reserve(dictionary.size());
+      |              ^~~~~~~
