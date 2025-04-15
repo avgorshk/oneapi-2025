@@ -413,6 +413,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zakharov_artem|0.0067|
 |3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI3|kulikov_artem|0.0080|
+|3821B1FI2|kazantsev_evgeny|0.0080|
 |3821B1FI3|sadikov_damir|0.0093|
 |**REF**|**REF**|**0.8951**|
 |3821B1FI3|durandin_vladimir|TOO SLOW|
@@ -431,12 +432,14 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|ivanov_nikita|BUILD FAILED|
 |3821B1FI1|bodrov_daniil|TOO SLOW|
 |3821B1FI2|travin_maksim|BUILD FAILED|
+|3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.2747|
 |3821B1FI1|bodrov_daniil|0.3032|
+|3821B1FI2|kazantsev_evgeny|0.3232|
 |3821B1FI2|travin_maksim|0.3474|
 |3821B1FI3|kulikov_artem|0.3709|
 |3821B1FI3|sadikov_damir|0.6114|
@@ -446,6 +449,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.2053|
+|3821B1FI2|kazantsev_evgeny|0.2707|
 |3821B1FI3|sadikov_damir|0.2827|
 |3821B1FI2|travin_maksim|0.3224|
 |3821B1FI1|bodrov_daniil|0.3388|
@@ -455,6 +459,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.1545|
+|3821B1FI2|kazantsev_evgeny|0.2721|
 |3821B1FI3|sadikov_damir|0.2724|
 |3821B1FI1|bodrov_daniil|0.3076|
 |3821B1FI2|travin_maksim|0.3601|
@@ -464,6 +469,7 @@ std::vector<float> GemmMklONEAPI(
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI2|travin_maksim|0.8332|
+|3821B1FI2|kazantsev_evgeny|0.8484|
 |**REF**|**REF**|**0.8759**|
 |3821B1FI3|sharapov_georgiy|0.8987|
 |3821B1FI3|sadikov_damir|0.9324|
@@ -474,6 +480,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
+|3821B1FI2|kazantsev_evgeny|0.6009|
 |3821B1FI2|travin_maksim|0.7961|
 |3821B1FI3|sharapov_georgiy|0.8169|
 |3821B1FI1|bodrov_daniil|TEST FAILED|
@@ -489,6 +496,7 @@ Passed: 0
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
+|3821B1FI2|kazantsev_evgeny|6/7|
 |3821B1FI2|travin_maksim|5/7|
 |3821B1FI2|zakharov_artem|1/7|
 
