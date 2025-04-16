@@ -450,6 +450,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulikov_artem|0.3709|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
+|3821B1FI3|kulagin_aleksandr|TEST FAILED|
 
 ## 4_jacobi_dev_oneapi (4096 elements)
 |Group|Name|Result|
