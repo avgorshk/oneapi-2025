@@ -6,7 +6,6 @@
 
 void Permutations(dictionary_t& dictionary) {
     dictionary_t temp_map;
-    temp_map.reserve(dictionary.size());
     for (const auto& [s, v] : dictionary) {
         std::string sorted_key = s;
         std::sort(sorted_key.begin(), sorted_key.end());
