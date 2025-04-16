@@ -9,10 +9,10 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
     sycl::buffer<float, 1> result_buf(&result, 1);
 
     {
-        q.submit([&](sycl::handler& h) {
-            auto reduction = sycl::reduction(result_buf, h, sycl::plus<>());
+        q.submit([&](sycl::handler& cgh) {
+            auto reduction = sycl::reduction(result_buf, cgh, sycl::plus<>());
 
-            h.parallel_for(sycl::range<2>(count, count), reduction, [=](sycl::id<2> idx, auto& sum) {
+            cgh.parallel_for(sycl::range<2>(count, count), reduction, [=](sycl::id<2> idx, auto& sum) {
                 float x = start + h * (idx[0] + 0.5f);
                 float y = start + h * (idx[1] + 0.5f);
 
