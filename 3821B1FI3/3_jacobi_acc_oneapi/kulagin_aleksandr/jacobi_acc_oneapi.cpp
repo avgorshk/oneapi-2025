@@ -38,7 +38,7 @@ std::vector<float> JacobiAccONEAPI(const std::vector<float> a, const std::vector
       dev_queue.wait();
       {
         auto error_host = error_buf.get_host_access();
-        if (error_host[0] <= accuracy) {
+        if (error_host[0] < accuracy) {
           break;
         }
         error_host[0] = 0.0f;
