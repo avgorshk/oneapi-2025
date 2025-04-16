@@ -418,6 +418,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|0.0093|
 |3821B1FI1|shmelev_ivan|0.0099|
 |3821B1FI2|travin_maksim|0.0104|
+|3821B1FI3|polozov_vladislav|0.0107|
 |**REF**|**REF**|**0.8951**|
 |3821B1FI3|durandin_vladimir|TOO SLOW|
 |3821B1FI3|ivanov_nikita|TEST FAILED|
@@ -430,6 +431,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulikov_artem|0.9977|
 |3821B1FI3|kulagin_aleksandr|1.2853|
 |3821B1FI3|sharapov_georgiy|1.4472|
+|3821B1FI3|polozov_vladislav|1.4476|
 |3821B1FI3|sadikov_damir|1.4479|
 |3821B1FI3|ivanov_nikita|BUILD FAILED|
 |3821B1FI1|bodrov_daniil|TOO SLOW|
@@ -448,6 +450,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kazantsev_evgeny|0.3232|
 |3821B1FI2|travin_maksim|0.3474|
 |3821B1FI3|kulikov_artem|0.3709|
+|3821B1FI3|polozov_vladislav|0.5856|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
 |3821B1FI3|kulagin_aleksandr|TEST FAILED|
@@ -460,6 +463,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sharapov_georgiy|0.2053|
 |3821B1FI2|kazantsev_evgeny|0.2707|
 |3821B1FI3|sadikov_damir|0.2827|
+|3821B1FI3|polozov_vladislav|0.2890|
 |3821B1FI2|travin_maksim|0.3224|
 |3821B1FI1|bodrov_daniil|0.3388|
 |**REF**|**REF**|**0.6662**|
@@ -470,6 +474,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sharapov_georgiy|0.1545|
 |3821B1FI1|shmelev_ivan|0.1770|
 |3821B1FI1|shipitsin_alex|0.2007|
+|3821B1FI3|polozov_vladislav|0.2711|
 |3821B1FI2|kazantsev_evgeny|0.2721|
 |3821B1FI3|sadikov_damir|0.2724|
 |3821B1FI1|bodrov_daniil|0.3076|
@@ -484,6 +489,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shipitsin_alex|0.8530|
 |**REF**|**REF**|**0.8759**|
 |3821B1FI3|sharapov_georgiy|0.8987|
+|3821B1FI3|polozov_vladislav|0.9244|
 |3821B1FI3|sadikov_damir|0.9324|
 |3821B1FI1|bodrov_daniil|1.0162|
 
@@ -496,6 +502,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shipitsin_alex|0.7713|
 |3821B1FI2|travin_maksim|0.7961|
 |3821B1FI3|sharapov_georgiy|0.8169|
+|3821B1FI3|polozov_vladislav|1.0043|
 |3821B1FI1|bodrov_daniil|TEST FAILED|
 
 # Tasks Done
@@ -524,9 +531,10 @@ Passed: 0
 |3821B1FI3|ivanov_nikita|0/7|
 |3821B1FI3|kulagin_aleksandr|2/7|
 |3821B1FI3|kulikov_artem|3/7|
+|3821B1FI3|polozov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 
-Passed: 2
+Passed: 3
 
-**Total Passed: 2**
+**Total Passed: 3**
