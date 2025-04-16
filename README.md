@@ -417,10 +417,10 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kazantsev_evgeny|0.0080|
 |3821B1FI3|sadikov_damir|0.0093|
 |3821B1FI1|shmelev_ivan|0.0099|
+|3821B1FI2|travin_maksim|0.0104|
 |**REF**|**REF**|**0.8951**|
 |3821B1FI3|durandin_vladimir|TOO SLOW|
 |3821B1FI3|ivanov_nikita|TEST FAILED|
-|3821B1FI2|travin_maksim|BUILD FAILED|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
@@ -511,7 +511,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI2|kazantsev_evgeny|6/7|
-|3821B1FI2|travin_maksim|5/7|
+|3821B1FI2|travin_maksim|6/7|
 |3821B1FI2|zakharov_artem|1/7|
 
 Passed: 0
