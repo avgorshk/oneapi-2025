@@ -467,6 +467,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|polozov_vladislav|0.2890|
 |3821B1FI2|travin_maksim|0.3224|
 |3821B1FI1|bodrov_daniil|0.3388|
+|3821B1FI3|ivanov_nikita|0.3635|
 |**REF**|**REF**|**0.6662**|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
@@ -531,7 +532,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|durandin_vladimir|1/7|
-|3821B1FI3|ivanov_nikita|3/7|
+|3821B1FI3|ivanov_nikita|4/7|
 |3821B1FI3|kulagin_aleksandr|2/7|
 |3821B1FI3|kulikov_artem|3/7|
 |3821B1FI3|polozov_vladislav|**7/7**|
