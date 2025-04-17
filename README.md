@@ -413,6 +413,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulagin_aleksandr|0.0060|
 |3821B1FI2|zakharov_artem|0.0067|
 |3821B1FI3|sharapov_georgiy|0.0070|
+|3821B1FI3|ivanov_nikita|0.0079|
 |3821B1FI3|kulikov_artem|0.0080|
 |3821B1FI2|kazantsev_evgeny|0.0080|
 |3821B1FI3|sadikov_damir|0.0093|
@@ -421,7 +422,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|polozov_vladislav|0.0107|
 |**REF**|**REF**|**0.8951**|
 |3821B1FI3|durandin_vladimir|TOO SLOW|
-|3821B1FI3|ivanov_nikita|TEST FAILED|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
@@ -530,7 +530,7 @@ Passed: 0
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|durandin_vladimir|1/7|
-|3821B1FI3|ivanov_nikita|0/7|
+|3821B1FI3|ivanov_nikita|1/7|
 |3821B1FI3|kulagin_aleksandr|2/7|
 |3821B1FI3|kulikov_artem|3/7|
 |3821B1FI3|polozov_vladislav|**7/7**|
