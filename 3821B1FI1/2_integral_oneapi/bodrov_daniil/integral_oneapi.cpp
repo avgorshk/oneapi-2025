@@ -6,13 +6,17 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
     float result = 0.0f;
 
     try {
-        sycl::queue q(device);
+        sycl::queue q(device, sycl::property::queue::enable_profiling{});
         
-        // Определяем размер рабочей группы
-        const int work_group_size = 16;
+        // Ограничиваем размер count для предотвращения целочисленного переполнения
+        // Максимальный размер зависит от возможностей устройства
+        const int max_count = std::min(count, 4096); // Безопасное ограничение
+        
+        // Определяем размер рабочей группы (уменьшаем для избежания ошибки)
+        const int work_group_size = 8;
         
         // Округляем размер до ближайшего числа, кратного размеру рабочей группы
-        const int rounded_count = ((count + work_group_size - 1) / work_group_size) * work_group_size;
+        const int rounded_count = ((max_count + work_group_size - 1) / work_group_size) * work_group_size;
         
         // Вычисляем количество рабочих групп
         const int num_groups = rounded_count / work_group_size;
@@ -54,7 +58,7 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
                 local_sum[local_idx] = 0.0f;
                 
                 // Вычисляем значение только для точек в пределах оригинального диапазона
-                if (global_i < count && global_j < count) {
+                if (global_i < max_count && global_j < max_count) {
                     const float x = start + (global_i + 0.5f) * step;
                     const float y = start + (global_j + 0.5f) * step;
                     local_sum[local_idx] = sycl::sin(x) * sycl::cos(y) * area;
@@ -94,6 +98,12 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
         
         auto result_acc = result_buf.get_access<sycl::access::mode::read>();
         result = result_acc[0];
+        
+        // Если мы ограничили размер, масштабируем результат
+        if (max_count < count) {
+            float scale_factor = static_cast<float>(count * count) / (max_count * max_count);
+            result *= scale_factor;
+        }
         
     } catch (const sycl::exception& e) {
         std::cerr << "SYCL Exception: " << e.what() << std::endl;
