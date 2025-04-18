@@ -68,7 +68,7 @@ int main() {
   std::cout << std::setprecision(16);
   for (size_t i = 0; i < n; i++) {
     std::cout << real[i] << ' ' << test[i] << '\n';
-    assert(std::abs(real[i] - test[i]) <= acc);
+    assert(std::abs(real[i] - test[i]) < acc);
   }
   return 0;
 }
