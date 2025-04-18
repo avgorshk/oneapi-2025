@@ -16,6 +16,7 @@ std::vector<float> JacobiAccONEAPI(const std::vector<float> a, const std::vector
     sycl::buffer<float, 1> res_prev_buf(res_prev.data(), res_prev.size());
     sycl::buffer<float, 1> error_buf(&error, 1);
     while (attempt < ITERATIONS) {
+      std::swap(res_buf, res_prev_buf);
       dev_queue.submit([&](sycl::handler& handler) {
         auto in_a = a_buf.get_access<sycl::access::mode::read>(handler);
         auto in_b = b_buf.get_access<sycl::access::mode::read>(handler);
@@ -43,11 +44,10 @@ std::vector<float> JacobiAccONEAPI(const std::vector<float> a, const std::vector
         }
         error_host[0] = 0.0f;
       }
-      std::swap(res_buf, res_prev_buf);
       attempt++;
     }
   }
-  if (attempt % 2 != 0) {
+  if (attempt % 2 == 0) {
     std::swap(res, res_prev);
   }
   return res;

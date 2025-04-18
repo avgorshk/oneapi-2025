@@ -12,6 +12,7 @@ static std::vector<float> jacobi(const std::vector<float> a, const std::vector<f
   int attempt = 0;
   float error = 0.0f;
   while(attempt < ITERATIONS) {
+    std::swap(res_prev, res);
     for (size_t i = 0; i < n; i++) {
       float g = b[i];
       for (size_t j = 0; j < n; j++) {
@@ -27,7 +28,6 @@ static std::vector<float> jacobi(const std::vector<float> a, const std::vector<f
       break;
     }
     error = 0.0f;
-    std::swap(res_prev, res);
     attempt++;
   }
   return res;
