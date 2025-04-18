@@ -489,6 +489,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|bodrov_daniil|0.3076|
 |3821B1FI2|travin_maksim|0.3601|
 |**REF**|**REF**|**0.6341**|
+|3821B1FI3|kulikov_artem|TEST FAILED|
 
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
