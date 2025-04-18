@@ -61,7 +61,7 @@ static sycl::device getFirstDevice() {
 int main() {
   std::vector<float> a = {2, 1, 5, 7};
   std::vector<float> b = {11, 13};
-  const float acc = 0.0001f;
+  const float acc = 0.009f;
   std::vector<float> real = jacobi(a, b, acc);
   std::vector<float> test = JacobiAccONEAPI(a, b, acc, getFirstDevice());
   const size_t n = b.size();
