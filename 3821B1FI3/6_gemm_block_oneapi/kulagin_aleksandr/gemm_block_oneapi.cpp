@@ -6,7 +6,6 @@ std::vector<float> GemmBlockONEAPI(const std::vector<float> a, const std::vector
   assert(size > 0);
   assert(a.size() == size * size);
   assert(b.size() == size * size);
-  assert((size & (size - 1)) == 0); // power of 2
   assert(size % block_size == 0);
   std::vector<float> res(size * size);
   {
