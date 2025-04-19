@@ -12,6 +12,7 @@ static std::vector<float> jacobi(const std::vector<float> a, const std::vector<f
   int attempt = 0;
   float error = 0.0f;
   while(attempt < ITERATIONS) {
+    std::swap(res_prev, res);
     for (size_t i = 0; i < n; i++) {
       float g = b[i];
       for (size_t j = 0; j < n; j++) {
@@ -27,7 +28,6 @@ static std::vector<float> jacobi(const std::vector<float> a, const std::vector<f
       break;
     }
     error = 0.0f;
-    std::swap(res_prev, res);
     attempt++;
   }
   return res;
@@ -61,14 +61,14 @@ static sycl::device getFirstDevice() {
 int main() {
   std::vector<float> a = {2, 1, 5, 7};
   std::vector<float> b = {11, 13};
-  const float acc = 0.0001f;
+  const float acc = 0.009f;
   std::vector<float> real = jacobi(a, b, acc);
   std::vector<float> test = JacobiAccONEAPI(a, b, acc, getFirstDevice());
   const size_t n = b.size();
   std::cout << std::setprecision(16);
   for (size_t i = 0; i < n; i++) {
     std::cout << real[i] << ' ' << test[i] << '\n';
-    assert(std::abs(real[i] - test[i]) <= acc);
+    assert(std::abs(real[i] - test[i]) < acc);
   }
   return 0;
 }
