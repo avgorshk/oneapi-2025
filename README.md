@@ -412,6 +412,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|bodrov_daniil|0.0054|
 |3821B1FI3|kulagin_aleksandr|0.0060|
 |3821B1FI2|zakharov_artem|0.0067|
+|3821B1FI3|kuznetsov_artyom|0.0067|
 |3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI1|bonyuk_peter|0.0074|
 |3821B1FI3|ivanov_nikita|0.0079|
@@ -441,6 +442,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|benduyzhko_tatiana|1.6310|
 |3821B1FI1|shipitsin_alex|TOO SLOW|
 |3821B1FI1|shmelev_ivan|TOO SLOW|
+|3821B1FI3|kuznetsov_artyom|TOO SLOW|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
@@ -450,6 +452,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shipitsin_alex|0.2593|
 |3821B1FI3|kulagin_aleksandr|0.2671|
 |3821B1FI3|sharapov_georgiy|0.2747|
+|3821B1FI3|kuznetsov_artyom|0.2886|
 |3821B1FI3|ivanov_nikita|0.2926|
 |3821B1FI1|bodrov_daniil|0.3032|
 |3821B1FI2|kazantsev_evgeny|0.3232|
@@ -465,6 +468,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI1|shipitsin_alex|0.1855|
 |3821B1FI1|shmelev_ivan|0.1874|
+|3821B1FI3|kuznetsov_artyom|0.1987|
 |3821B1FI3|sharapov_georgiy|0.2053|
 |3821B1FI2|kazantsev_evgeny|0.2707|
 |3821B1FI3|sadikov_damir|0.2827|
@@ -481,6 +485,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.1545|
 |3821B1FI1|shmelev_ivan|0.1770|
+|3821B1FI3|kuznetsov_artyom|0.1792|
 |3821B1FI3|benduyzhko_tatiana|0.1879|
 |3821B1FI1|shipitsin_alex|0.2007|
 |3821B1FI3|polozov_vladislav|0.2711|
@@ -501,6 +506,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shmelev_ivan|0.8931|
 |3821B1FI3|benduyzhko_tatiana|0.8946|
 |3821B1FI3|sharapov_georgiy|0.8987|
+|3821B1FI3|kuznetsov_artyom|0.9044|
 |3821B1FI3|polozov_vladislav|0.9244|
 |3821B1FI3|sadikov_damir|0.9324|
 |3821B1FI1|bodrov_daniil|1.0162|
@@ -511,6 +517,7 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
 |3821B1FI2|kazantsev_evgeny|0.6009|
+|3821B1FI3|kuznetsov_artyom|0.6912|
 |3821B1FI1|shipitsin_alex|0.7713|
 |3821B1FI3|benduyzhko_tatiana|0.7849|
 |3821B1FI2|travin_maksim|0.7961|
@@ -547,6 +554,7 @@ Passed: 1
 |3821B1FI3|ivanov_nikita|4/7|
 |3821B1FI3|kulagin_aleksandr|3/7|
 |3821B1FI3|kulikov_artem|3/7|
+|3821B1FI3|kuznetsov_artyom|6/7|
 |3821B1FI3|polozov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
