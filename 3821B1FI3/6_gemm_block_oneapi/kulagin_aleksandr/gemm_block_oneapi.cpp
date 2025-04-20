@@ -2,7 +2,7 @@
 #include "gemm_block_oneapi.h"
 
 std::vector<float> GemmBlockONEAPI(const std::vector<float> a, const std::vector<float> b, size_t size, sycl::device device) {
-  constexpr size_t block_size = 32;
+  constexpr size_t block_size = 16;
   assert(size > 0);
   assert(a.size() == size * size);
   assert(b.size() == size * size);
