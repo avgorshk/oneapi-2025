@@ -421,6 +421,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kazantsev_evgeny|0.0080|
 |3821B1FI3|sadikov_damir|0.0093|
 |3821B1FI3|benduyzhko_tatiana|0.0093|
+|3821B1FI3|tyulkina_olga|0.0095|
 |3821B1FI1|shmelev_ivan|0.0099|
 |3821B1FI2|travin_maksim|0.0104|
 |3821B1FI3|polozov_vladislav|0.0107|
@@ -446,6 +447,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|benduyzhko_tatiana|1.6310|
 |3821B1FI1|shipitsin_alex|TOO SLOW|
 |3821B1FI1|shmelev_ivan|TOO SLOW|
+|3821B1FI3|tyulkina_olga|TOO SLOW|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
@@ -464,6 +466,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|travin_maksim|0.3474|
 |3821B1FI3|kulikov_artem|0.3709|
 |3821B1FI3|benduyzhko_tatiana|0.4267|
+|3821B1FI3|tyulkina_olga|0.5634|
 |3821B1FI3|polozov_vladislav|0.5856|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
@@ -483,6 +486,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|0.2827|
 |3821B1FI3|polozov_vladislav|0.2890|
 |3821B1FI2|travin_maksim|0.3224|
+|3821B1FI3|tyulkina_olga|0.3359|
 |3821B1FI3|benduyzhko_tatiana|0.3370|
 |3821B1FI1|bodrov_daniil|0.3388|
 |3821B1FI3|ivanov_nikita|0.3635|
@@ -495,6 +499,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zakharov_artem|0.1564|
 |3821B1FI1|shmelev_ivan|0.1770|
 |3821B1FI3|kuznetsov_artyom|0.1792|
+|3821B1FI3|tyulkina_olga|0.1798|
 |3821B1FI3|benduyzhko_tatiana|0.1879|
 |3821B1FI1|shipitsin_alex|0.2007|
 |3821B1FI3|kulaev_zhenya|0.2021|
@@ -510,6 +515,7 @@ std::vector<float> GemmMklONEAPI(
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI3|tyulkina_olga|0.8278|
 |3821B1FI2|travin_maksim|0.8332|
 |3821B1FI2|kazantsev_evgeny|0.8484|
 |3821B1FI1|shipitsin_alex|0.8530|
@@ -533,6 +539,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|0.4335|
 |3821B1FI2|kazantsev_evgeny|0.6009|
 |3821B1FI3|kuznetsov_artyom|0.6912|
+|3821B1FI3|tyulkina_olga|0.7044|
 |3821B1FI1|shipitsin_alex|0.7713|
 |3821B1FI3|benduyzhko_tatiana|0.7849|
 |3821B1FI3|kulaev_zhenya|0.7945|
@@ -578,6 +585,7 @@ Passed: 2
 |3821B1FI3|polozov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
+|3821B1FI3|tyulkina_olga|6/7|
 
 Passed: 7
 
