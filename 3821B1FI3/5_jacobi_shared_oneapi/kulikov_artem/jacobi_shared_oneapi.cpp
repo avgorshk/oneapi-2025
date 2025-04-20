@@ -26,9 +26,9 @@ std::vector<float> JacobiSharedONEAPI(
 
     q.memset(d_x_new, 0, sizeof(float) * n).wait();
 
-    float err;
+    float err = 0.0f;
     int k = ITERATIONS;
-    sycl::buffer err_buf(&err, sycl::range<1>(1));
+    sycl::buffer<float, 1> err_buf(&err, sycl::range<1>(1));
     do {
         {
             auto error = err_buf.get_host_access();
@@ -58,6 +58,11 @@ std::vector<float> JacobiSharedONEAPI(
                                   err_max.combine(sycl::fabs(x - d_x_old[i]));
                               });
          }).wait();
+
+        {
+            auto error = err_buf.get_host_access();
+            err = error[0];
+        }
 
         k--;
     } while (err >= accuracy && k > 0);
