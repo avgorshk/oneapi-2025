@@ -499,13 +499,13 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shipitsin_alex|0.2007|
 |3821B1FI3|kulaev_zhenya|0.2021|
 |3821B1FI3|kulagin_aleksandr|0.2055|
+|3821B1FI3|kulikov_artem|0.2676|
 |3821B1FI3|polozov_vladislav|0.2711|
 |3821B1FI2|kazantsev_evgeny|0.2721|
 |3821B1FI3|sadikov_damir|0.2724|
 |3821B1FI1|bodrov_daniil|0.3076|
 |3821B1FI2|travin_maksim|0.3601|
 |**REF**|**REF**|**0.6341**|
-|3821B1FI3|kulikov_artem|TEST FAILED|
 
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
@@ -573,7 +573,7 @@ Passed: 2
 |3821B1FI3|ivanov_nikita|4/7|
 |3821B1FI3|kulaev_zhenya|**7/7**|
 |3821B1FI3|kulagin_aleksandr|6/7|
-|3821B1FI3|kulikov_artem|5/7|
+|3821B1FI3|kulikov_artem|6/7|
 |3821B1FI3|kuznetsov_artyom|**7/7**|
 |3821B1FI3|polozov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
