@@ -3,7 +3,7 @@
 std::vector<float> GemmBlockONEAPI(
     const std::vector<float> a, const std::vector<float> b,
     size_t size, sycl::device device) {
-    const int BLOCK_SIZE = 32;
+    const int BLOCK_SIZE = 16;
     std::vector<float> c(size * size);
     sycl::queue q(device);
 
