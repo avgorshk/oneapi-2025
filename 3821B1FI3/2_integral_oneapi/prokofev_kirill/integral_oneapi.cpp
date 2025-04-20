@@ -24,3 +24,4 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
   }
   return res;
 }
+
