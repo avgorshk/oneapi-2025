@@ -3,28 +3,32 @@
 #include <reduction.hpp>
 
 float IntegralONEAPI(float start, float end, int count, sycl::device device) {
-  float ans = 0.0f;
+  float result = 0.0f;
+  const float delta = (end - start) / count;
 
-  {
-    sycl::buffer<float> buf_ans(&ans, 1);
+  sycl::buffer<float> buf_result(&result, 1);
+  sycl::queue queue(device);
 
-    sycl::queue queue(device);
+  queue.submit([&](sycl::handler &cgh) {
+    auto reduction = sycl::reduction(buf_result, cgh, sycl::plus<>());
+    
+    cgh.parallel_for(sycl::range<2>(count, count), reduction, [=](sycl::id<2> id, auto& sum) {
+      const int i = id[0];
+      const int j = id[1];
 
-    queue.submit([&](sycl::handler &cgh) {
-      auto reduction = sycl::reduction(buf_ans, cgh, sycl::plus<>());
+      const float Xi   = start + delta * i;
+      const float Xi_1 = Xi + delta;
+      const float Yi   = start + delta * j;
+      const float Yi_1 = Yi + delta;
 
-      cgh.parallel_for(sycl::range<2>(count, count), reduction, [=](sycl::id<2> id, auto& sum) {
-        float Xi = start + (end - start) / count * id.get(0);
-        float Xi_1 = start + (end - start) / count * (id.get(0) + 1);
-        float Yi = start + (end - start) / count * id.get(1);
-        float Yi_1 = start + (end - start) / count * (id.get(1) + 1);
-        sum += sycl::sin((Xi + Xi_1) / 2.0f) * sycl::cos((Yi + Yi_1) / 2.0f) * (Xi_1 - Xi) * (Yi_1 - Yi);
-      });
+      const float mid_x = (Xi + Xi_1) * 0.5f;
+      const float mid_y = (Yi + Yi_1) * 0.5f;
+      const float area = delta * delta;
+
+      sum += sycl::sin(mid_x) * sycl::cos(mid_y) * area;
     });
+  });
 
-    queue.wait();
-  }
-
-
-  return ans;
+  queue.wait();
+  return result;
 }
