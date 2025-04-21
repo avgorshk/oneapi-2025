@@ -429,6 +429,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|travin_maksim|0.0104|
 |3821B1FI3|polozov_vladislav|0.0107|
 |**REF**|**REF**|**0.8951**|
+|3821B1FI1|pushkarev_ilya|TEST FAILED|
 |3821B1FI3|durandin_vladimir|TOO SLOW|
 
 ## 2_integral_oneapi (65536 elements)
@@ -576,6 +577,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI1|bodrov_daniil|**7/7**|
 |3821B1FI1|bonyuk_peter|1/7|
+|3821B1FI1|pushkarev_ilya|0/7|
 |3821B1FI1|shipitsin_alex|6/7|
 |3821B1FI1|shmelev_ivan|6/7|
 
