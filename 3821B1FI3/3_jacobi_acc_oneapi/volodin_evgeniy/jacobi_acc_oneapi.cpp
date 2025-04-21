@@ -47,7 +47,7 @@ std::vector<float> JacobiAccONEAPI(const std::vector<float> a,
       auto x_acc = x_buf.get_access<sycl::access_mode::read>(cgh);
       auto x_new_acc = x_new_buf.get_access<sycl::access_mode::read>(cgh);
       auto max_diff_acc =
-          max_diff_buf.get_access<sycl::access_mode::atomic>(cgh);
+          max_diff_buf.get_access<sycl::access_mode::read_write>(cgh);
 
       cgh.parallel_for<class MaxDiffKernelOpt>(
           sycl::range<1>(n), [=](sycl::id<1> idx) {
