@@ -421,6 +421,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulaev_zhenya|0.0073|
 |3821B1FI1|bonyuk_peter|0.0074|
 |3821B1FI2|zawadowski_jan|0.0078|
+|3821B1FI2|loginov_maxim|0.0078|
 |3821B1FI3|ivanov_nikita|0.0079|
 |3821B1FI3|kulikov_artem|0.0080|
 |3821B1FI2|kazantsev_evgeny|0.0080|
@@ -447,6 +448,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|tyulkina_olga|1.0048|
 |3821B1FI3|kulagin_aleksandr|1.2853|
 |3821B1FI3|prokofev_kirill|1.4003|
+|3821B1FI2|loginov_maxim|1.4044|
 |3821B1FI2|zakharov_artem|1.4051|
 |3821B1FI1|balyasov_ivan|1.4059|
 |3821B1FI3|kuznetsov_artyom|1.4179|
@@ -469,6 +471,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|prokofev_kirill|0.2649|
 |3821B1FI1|balyasov_ivan|0.2651|
 |3821B1FI3|kulagin_aleksandr|0.2671|
+|3821B1FI2|loginov_maxim|0.2677|
 |3821B1FI3|pivovarov_alexey|0.2686|
 |3821B1FI2|kostanyan_arsen|0.2692|
 |3821B1FI3|sharapov_georgiy|0.2747|
@@ -495,6 +498,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kuznetsov_artyom|0.1987|
 |3821B1FI1|balyasov_ivan|0.1988|
 |3821B1FI2|zakharov_artem|0.1993|
+|3821B1FI2|loginov_maxim|0.1999|
 |3821B1FI3|pivovarov_alexey|0.2033|
 |3821B1FI2|kostanyan_arsen|0.2042|
 |3821B1FI3|sharapov_georgiy|0.2053|
@@ -522,6 +526,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kuznetsov_artyom|0.1792|
 |3821B1FI3|tyulkina_olga|0.1798|
 |3821B1FI3|benduyzhko_tatiana|0.1879|
+|3821B1FI2|loginov_maxim|0.1883|
 |3821B1FI1|balyasov_ivan|0.1912|
 |3821B1FI3|pivovarov_alexey|0.1932|
 |3821B1FI3|prokofev_kirill|0.1971|
@@ -548,6 +553,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulagin_aleksandr|0.8541|
 |**REF**|**REF**|**0.8759**|
 |3821B1FI1|shmelev_ivan|0.8931|
+|3821B1FI2|loginov_maxim|0.8935|
 |3821B1FI2|zakharov_artem|0.8939|
 |3821B1FI3|benduyzhko_tatiana|0.8946|
 |3821B1FI3|ivanov_nikita|0.8976|
@@ -569,6 +575,7 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
 |3821B1FI2|kazantsev_evgeny|0.6009|
+|3821B1FI2|loginov_maxim|0.6507|
 |3821B1FI2|zawadowski_jan|0.6787|
 |3821B1FI3|kuznetsov_artyom|0.6912|
 |3821B1FI3|pivovarov_alexey|0.7002|
@@ -606,11 +613,12 @@ Passed: 2
 |-----|----|------|
 |3821B1FI2|kazantsev_evgeny|6/7|
 |3821B1FI2|kostanyan_arsen|4/7|
+|3821B1FI2|loginov_maxim|**7/7**|
 |3821B1FI2|travin_maksim|**7/7**|
 |3821B1FI2|zakharov_artem|**7/7**|
 |3821B1FI2|zawadowski_jan|**7/7**|
 
-Passed: 3
+Passed: 4
 
 ## 3821B1FI3
 |Group|Name|Passed|
@@ -631,4 +639,4 @@ Passed: 3
 
 Passed: 10
 
-**Total Passed: 15**
+**Total Passed: 16**
