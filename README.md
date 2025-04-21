@@ -535,6 +535,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|0.2724|
 |3821B1FI1|bodrov_daniil|0.3076|
 |3821B1FI2|travin_maksim|0.3601|
+|3821B1FI2|zawadowski_jan|0.3608|
 |**REF**|**REF**|**0.6341**|
 
 ## 6_gemm_block_oneapi (3072 elements)
@@ -605,7 +606,7 @@ Passed: 2
 |3821B1FI2|kostanyan_arsen|4/7|
 |3821B1FI2|travin_maksim|**7/7**|
 |3821B1FI2|zakharov_artem|**7/7**|
-|3821B1FI2|zawadowski_jan|4/7|
+|3821B1FI2|zawadowski_jan|5/7|
 
 Passed: 2
 
