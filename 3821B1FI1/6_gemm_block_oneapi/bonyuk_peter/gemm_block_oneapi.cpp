@@ -1,83 +1,74 @@
 #include "gemm_block_oneapi.h"
-
-#include <sycl/sycl.hpp>
 #include <vector>
 
-std::vector<float> GemmBlockONEAPI(const std::vector<float>& a,
-                                  const std::vector<float>& b, 
-                                  size_t size, 
-                                  sycl::device device) {
-                                                                                         
-    constexpr size_t block_size = 32;
-    size_t total_elements = size * size;
-    std::vector<float> result(total_elements, 0.0f);
+std::vector<float> GemmBlockONEAPI(
+    const std::vector<float> a, const std::vector<float> b,
+    size_t size, sycl::device device) {
+    constexpr size_t TILE_SIZE = 16;
+    constexpr size_t SUBTILE_SIZE = 16;
 
-    sycl::queue queue(device, sycl::property::queue::in_order{});
+    std::vector<float> result(size * size, 0.0f);
+    sycl::queue q(device, sycl::property::queue::in_order());
 
-    float *devA = sycl::malloc_device<float>(total_elements, queue);
-    float *devB = sycl::malloc_device<float>(total_elements, queue);
-    float *devC = sycl::malloc_device<float>(total_elements, queue);
+    sycl::buffer<float, 2> buf_a(a.data(), sycl::range<2>(size, size));
+    sycl::buffer<float, 2> buf_b(b.data(), sycl::range<2>(size, size));
+    sycl::buffer<float, 2> buf_c(result.data(), sycl::range<2>(size, size));
 
-    auto copyA = queue.memcpy(devA, a.data(), total_elements * sizeof(float));
-    auto copyB = queue.memcpy(devB, b.data(), total_elements * sizeof(float));
-    
-    copyA.wait();
-    copyB.wait();
+    const size_t num_tiles = (size + TILE_SIZE - 1) / TILE_SIZE;
 
-    sycl::range<2> global_range(size, size);
-    sycl::range<2> local_range(block_size, block_size);
+    q.submit([&](sycl::handler& h) {
+        auto a_acc = buf_a.get_access<sycl::access::mode::read>(h);
+        auto b_acc = buf_b.get_access<sycl::access::mode::read>(h);
+        auto c_acc = buf_c.get_access<sycl::access::mode::write>(h);
 
-    queue.submit([&](sycl::handler &cgh) {
-        sycl::local_accessor<float, 2> block_a(sycl::range<2>(block_size, block_size), cgh);
-        sycl::local_accessor<float, 2> block_b(sycl::range<2>(block_size, block_size), cgh);
+        sycl::local_accessor<float, 2> local_a(sycl::range<2>(TILE_SIZE, SUBTILE_SIZE), h);
+        sycl::local_accessor<float, 2> local_b(sycl::range<2>(SUBTILE_SIZE, TILE_SIZE), h);
 
-        cgh.parallel_for<class GemmKernel>(
-            sycl::nd_range<2>(global_range, local_range),
-            [=](sycl::nd_item<2> item) {
-                int global_row = item.get_global_id(0);
-                int global_col = item.get_global_id(1);
-                int local_row = item.get_local_id(0);
-                int local_col = item.get_local_id(1);
-                
-                float sum = 0.0f;
-                
-                int num_blocks = size / block_size;
-                
-                for (int block_idx = 0; block_idx < num_blocks; ++block_idx) {
+        h.parallel_for(sycl::nd_range<2>(
+            sycl::range<2>(num_tiles * TILE_SIZE, num_tiles * TILE_SIZE),
+            sycl::range<2>(TILE_SIZE, TILE_SIZE)
+        ), [=](sycl::nd_item<2> item) {
+            const size_t local_row = item.get_local_id(0);
+            const size_t local_col = item.get_local_id(1);
+            const size_t global_row = item.get_global_id(0);
+            const size_t global_col = item.get_global_id(1);
 
-                    int a_col = block_idx * block_size + local_col;
-                    block_a[local_row][local_col] = 
-                        (global_row < size && a_col < size) 
-                        ? devA[global_row * size + a_col] 
-                        : 0.0f;
-                    
-                    int b_row = block_idx * block_size + local_row;
-                    block_b[local_row][local_col] = 
-                        (b_row < size && global_col < size) 
-                        ? devB[b_row * size + global_col] 
-                        : 0.0f;
-                    
-                    item.barrier(sycl::access::fence_space::local_space);
-                    
-                    for (int k = 0; k < block_size; ++k) {
-                        sum += block_a[local_row][k] * block_b[k][local_col];
+            if (global_row >= size || global_col >= size) return;
+
+            float sum = 0.0f;
+
+            for (size_t tile = 0; tile < num_tiles; ++tile) {
+                for (size_t subtile = 0; subtile < TILE_SIZE; subtile += SUBTILE_SIZE) {
+                    if (local_col < SUBTILE_SIZE &&
+                        global_row < size &&
+                        tile * TILE_SIZE + subtile + local_col < size) {
+                        local_a[local_row][local_col] =
+                            a_acc[global_row][tile * TILE_SIZE + subtile + local_col];
                     }
-                    
+
+                    if (local_row < SUBTILE_SIZE &&
+                        tile * TILE_SIZE + subtile + local_row < size &&
+                        global_col < size) {
+                        local_b[local_row][local_col] =
+                            b_acc[tile * TILE_SIZE + subtile + local_row][global_col];
+                    }
+
+                    item.barrier(sycl::access::fence_space::local_space);
+
+
+#pragma unroll
+                    for (size_t k = 0; k < SUBTILE_SIZE; ++k) {
+                        sum += local_a[local_row][k] * local_b[k][local_col];
+                    }
+
                     item.barrier(sycl::access::fence_space::local_space);
                 }
-                
-                // Сохранение результата
-                if (global_row < size && global_col < size) {
-                    devC[global_row * size + global_col] = sum;
-                }
+            }
+
+            c_acc[global_row][global_col] = sum;
             });
-    });
+        });
 
-    queue.memcpy(result.data(), devC, total_elements * sizeof(float)).wait();
-
-    sycl::free(devA, queue);
-    sycl::free(devB, queue);
-    sycl::free(devC, queue);
-
+    q.wait();
     return result;
 }
