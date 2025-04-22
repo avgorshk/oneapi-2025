@@ -1,0 +1,7 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/4_jacobi_dev_oneapi/volodin_evgeniy/jacobi_dev_oneapi.cpp:3:15: error: expected unqualified-id
+    3 | constexpr int ITERATIONS = 10000;
+      |               ^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/4_jacobi_dev_oneapi/volodin_evgeniy/jacobi_dev_oneapi.h:8:20: note: expanded from macro 'ITERATIONS'
+    8 | #define ITERATIONS 1024
+      |                    ^
+1 error generated.
