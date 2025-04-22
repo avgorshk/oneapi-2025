@@ -465,6 +465,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|benduyzhko_tatiana|1.6310|
 |3821B1FI1|shipitsin_alex|TOO SLOW|
 |3821B1FI1|shmelev_ivan|TOO SLOW|
+|3821B1FI1|bonyuk_peter|RUN FAILED|
 |3821B1FI3|pivovarov_alexey|TOO SLOW|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 |3821B1FI2|kostin_artem|TEST FAILED|
@@ -477,6 +478,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shipitsin_alex|0.2593|
 |3821B1FI3|prokofev_kirill|0.2649|
 |3821B1FI1|balyasov_ivan|0.2651|
+|3821B1FI1|bonyuk_peter|0.2655|
 |3821B1FI1|lysanova_julia|0.2671|
 |3821B1FI3|kulagin_aleksandr|0.2671|
 |3821B1FI2|loginov_maxim|0.2677|
@@ -502,6 +504,7 @@ std::vector<float> GemmMklONEAPI(
 ## 4_jacobi_dev_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|bonyuk_peter|0.1829|
 |3821B1FI1|shipitsin_alex|0.1855|
 |3821B1FI1|shmelev_ivan|0.1874|
 |3821B1FI3|kuznetsov_artyom|0.1987|
@@ -543,6 +546,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|lysanova_julia|0.1906|
 |3821B1FI1|balyasov_ivan|0.1912|
 |3821B1FI3|pivovarov_alexey|0.1932|
+|3821B1FI1|bonyuk_peter|0.1937|
 |3821B1FI3|prokofev_kirill|0.1971|
 |3821B1FI1|shipitsin_alex|0.2007|
 |3821B1FI3|kulaev_zhenya|0.2021|
@@ -586,6 +590,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|prokofev_kirill|0.9383|
 |3821B1FI1|kashirin_alexander|0.9719|
 |3821B1FI1|bodrov_daniil|1.0162|
+|3821B1FI1|bonyuk_peter|BUILD FAILED|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
 |Group|Name|Result|
@@ -600,6 +605,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|tyulkina_olga|0.7044|
 |3821B1FI1|shipitsin_alex|0.7713|
 |3821B1FI3|benduyzhko_tatiana|0.7849|
+|3821B1FI1|bonyuk_peter|0.7913|
 |3821B1FI3|kulaev_zhenya|0.7945|
 |3821B1FI3|kulikov_artem|0.7959|
 |3821B1FI2|travin_maksim|0.7961|
@@ -622,7 +628,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI1|balyasov_ivan|**7/7**|
 |3821B1FI1|bodrov_daniil|**7/7**|
-|3821B1FI1|bonyuk_peter|1/7|
+|3821B1FI1|bonyuk_peter|5/7|
 |3821B1FI1|kashirin_alexander|**7/7**|
 |3821B1FI1|lysanova_julia|**7/7**|
 |3821B1FI1|pushkarev_ilya|0/7|
