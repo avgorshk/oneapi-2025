@@ -1,7 +1,5 @@
 #include "jacobi_dev_oneapi.h"
 
-constexpr int ITERATIONS = 10000;
-
 std::vector<float> JacobiDevONEAPI(const std::vector<float> &a,
                                    const std::vector<float> &b, float accuracy,
                                    sycl::device device) {
