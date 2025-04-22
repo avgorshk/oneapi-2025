@@ -412,6 +412,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|bodrov_daniil|0.0054|
 |3821B1FI3|pivovarov_alexey|0.0058|
 |3821B1FI3|prokofev_kirill|0.0059|
+|3821B1FI1|kashirin_alexander|0.0060|
 |3821B1FI3|kulagin_aleksandr|0.0060|
 |3821B1FI2|kostanyan_arsen|0.0060|
 |3821B1FI1|balyasov_ivan|0.0067|
@@ -613,6 +614,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|balyasov_ivan|**7/7**|
 |3821B1FI1|bodrov_daniil|**7/7**|
 |3821B1FI1|bonyuk_peter|1/7|
+|3821B1FI1|kashirin_alexander|1/7|
 |3821B1FI1|lysanova_julia|**7/7**|
 |3821B1FI1|pushkarev_ilya|0/7|
 |3821B1FI1|shipitsin_alex|6/7|
