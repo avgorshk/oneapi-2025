@@ -428,6 +428,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|loginov_maxim|0.0078|
 |3821B1FI2|kostin_artem|0.0079|
 |3821B1FI3|ivanov_nikita|0.0079|
+|3821B1FI3|vasilev_ivan|0.0079|
 |3821B1FI2|kazantsev_evgeny|0.0080|
 |3821B1FI3|kulikov_artem|0.0080|
 |3821B1FI3|safronov_mikhail|0.0081|
@@ -459,6 +460,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|savotina_valeria|1.3929|
 |3821B1FI1|lysanova_julia|1.3934|
 |3821B1FI3|prokofev_kirill|1.4003|
+|3821B1FI3|vasilev_ivan|1.4037|
 |3821B1FI2|loginov_maxim|1.4044|
 |3821B1FI2|zakharov_artem|1.4051|
 |3821B1FI1|balyasov_ivan|1.4059|
@@ -499,6 +501,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zakharov_artem|0.2855|
 |3821B1FI3|kuznetsov_artyom|0.2886|
 |3821B1FI3|ivanov_nikita|0.2926|
+|3821B1FI3|vasilev_ivan|0.2932|
 |3821B1FI1|bodrov_daniil|0.3032|
 |3821B1FI2|kazantsev_evgeny|0.3232|
 |3821B1FI2|travin_maksim|0.3474|
@@ -530,6 +533,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kostanyan_arsen|0.2042|
 |3821B1FI1|lysanova_julia|0.2052|
 |3821B1FI3|sharapov_georgiy|0.2053|
+|3821B1FI3|vasilev_ivan|0.2054|
 |3821B1FI3|kulaev_zhenya|0.2069|
 |3821B1FI3|prokofev_kirill|0.2100|
 |3821B1FI3|kulagin_aleksandr|0.2270|
@@ -566,6 +570,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|pivovarov_alexey|0.1932|
 |3821B1FI1|bonyuk_peter|0.1937|
 |3821B1FI3|prokofev_kirill|0.1971|
+|3821B1FI3|vasilev_ivan|0.2001|
 |3821B1FI1|shipitsin_alex|0.2007|
 |3821B1FI3|kulaev_zhenya|0.2021|
 |3821B1FI3|kulagin_aleksandr|0.2055|
@@ -602,6 +607,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulaev_zhenya|0.9010|
 |3821B1FI3|pivovarov_alexey|0.9012|
 |3821B1FI1|balyasov_ivan|0.9016|
+|3821B1FI3|vasilev_ivan|0.9022|
 |3821B1FI2|zawadowski_jan|0.9025|
 |3821B1FI3|savotina_valeria|0.9033|
 |3821B1FI3|kuznetsov_artyom|0.9044|
@@ -644,6 +650,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zakharov_artem|0.9576|
 |3821B1FI2|petrov_maksim|0.9633|
 |3821B1FI3|kulagin_aleksandr|0.9653|
+|3821B1FI3|vasilev_ivan|0.9656|
 |3821B1FI1|lysanova_julia|0.9668|
 |3821B1FI1|balyasov_ivan|0.9790|
 |3821B1FI1|bodrov_daniil|0.9925|
@@ -697,8 +704,9 @@ Passed: 4
 |3821B1FI3|savotina_valeria|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 |3821B1FI3|tyulkina_olga|**7/7**|
+|3821B1FI3|vasilev_ivan|**7/7**|
 |3821B1FI3|volodin_evgeniy|4/7|
 
-Passed: 12
+Passed: 13
 
-**Total Passed: 20**
+**Total Passed: 21**
