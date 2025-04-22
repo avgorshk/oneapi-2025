@@ -527,6 +527,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kuznetsov_artyom|0.1987|
 |3821B1FI1|balyasov_ivan|0.1988|
 |3821B1FI2|zakharov_artem|0.1993|
+|3821B1FI3|durandin_vladimir|0.1998|
 |3821B1FI2|loginov_maxim|0.1999|
 |3821B1FI2|petrov_maksim|0.2010|
 |3821B1FI2|kostin_artem|0.2025|
@@ -691,7 +692,7 @@ Passed: 4
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|benduyzhko_tatiana|**7/7**|
-|3821B1FI3|durandin_vladimir|3/7|
+|3821B1FI3|durandin_vladimir|4/7|
 |3821B1FI3|ivanov_nikita|**7/7**|
 |3821B1FI3|kulaev_zhenya|**7/7**|
 |3821B1FI3|kulagin_aleksandr|**7/7**|
