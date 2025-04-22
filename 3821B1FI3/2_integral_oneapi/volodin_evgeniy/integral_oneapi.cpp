@@ -1,4 +1,5 @@
 #include "integral_oneapi.h"
+#include <cmath>
 
 float IntegralONEAPI(float start, float end, int count, sycl::device device) {
   float step = (end - start) / count;
