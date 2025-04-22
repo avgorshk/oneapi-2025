@@ -408,6 +408,7 @@ std::vector<float> GemmMklONEAPI(
 ## 1_permutations_cxx (10240 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|petrov_maksim|0.0039|
 |3821B1FI1|shipitsin_alex|0.0053|
 |3821B1FI1|bodrov_daniil|0.0054|
 |3821B1FI3|pivovarov_alexey|0.0058|
@@ -473,10 +474,12 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|volodin_evgeniy|BUILD FAILED|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 |3821B1FI2|kostin_artem|TEST FAILED|
+|3821B1FI2|petrov_maksim|TOO SLOW|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|petrov_maksim|0.2334|
 |3821B1FI2|kostin_artem|0.2355|
 |3821B1FI1|shmelev_ivan|0.2551|
 |3821B1FI1|shipitsin_alex|0.2593|
@@ -517,6 +520,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|balyasov_ivan|0.1988|
 |3821B1FI2|zakharov_artem|0.1993|
 |3821B1FI2|loginov_maxim|0.1999|
+|3821B1FI2|petrov_maksim|0.2010|
 |3821B1FI2|kostin_artem|0.2025|
 |3821B1FI3|pivovarov_alexey|0.2033|
 |3821B1FI2|kostanyan_arsen|0.2042|
@@ -553,6 +557,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|loginov_maxim|0.1883|
 |3821B1FI1|lysanova_julia|0.1906|
 |3821B1FI1|balyasov_ivan|0.1912|
+|3821B1FI2|petrov_maksim|0.1926|
 |3821B1FI3|pivovarov_alexey|0.1932|
 |3821B1FI1|bonyuk_peter|0.1937|
 |3821B1FI3|prokofev_kirill|0.1971|
@@ -594,6 +599,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|balyasov_ivan|0.9016|
 |3821B1FI2|zawadowski_jan|0.9025|
 |3821B1FI3|kuznetsov_artyom|0.9044|
+|3821B1FI2|petrov_maksim|0.9142|
 |3821B1FI3|polozov_vladislav|0.9244|
 |3821B1FI2|kostin_artem|0.9246|
 |3821B1FI3|volodin_evgeniy|0.9248|
@@ -629,6 +635,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kostin_artem|0.9371|
 |3821B1FI1|shmelev_ivan|0.9394|
 |3821B1FI2|zakharov_artem|0.9576|
+|3821B1FI2|petrov_maksim|0.9633|
 |3821B1FI3|kulagin_aleksandr|0.9653|
 |3821B1FI1|lysanova_julia|0.9668|
 |3821B1FI1|balyasov_ivan|0.9790|
@@ -658,6 +665,7 @@ Passed: 4
 |3821B1FI2|kostanyan_arsen|4/7|
 |3821B1FI2|kostin_artem|6/7|
 |3821B1FI2|loginov_maxim|**7/7**|
+|3821B1FI2|petrov_maksim|6/7|
 |3821B1FI2|travin_maksim|**7/7**|
 |3821B1FI2|zakharov_artem|**7/7**|
 |3821B1FI2|zawadowski_jan|**7/7**|
