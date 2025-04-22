@@ -572,6 +572,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|loginov_maxim|0.8935|
 |3821B1FI2|zakharov_artem|0.8939|
 |3821B1FI3|benduyzhko_tatiana|0.8946|
+|3821B1FI3|kulikov_artem|0.8975|
 |3821B1FI3|ivanov_nikita|0.8976|
 |3821B1FI3|sharapov_georgiy|0.8987|
 |3821B1FI3|kulaev_zhenya|0.9010|
@@ -584,7 +585,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|prokofev_kirill|0.9383|
 |3821B1FI1|kashirin_alexander|0.9719|
 |3821B1FI1|bodrov_daniil|1.0162|
-|3821B1FI3|kulikov_artem|TOO SLOW|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
 |Group|Name|Result|
@@ -650,7 +650,7 @@ Passed: 4
 |3821B1FI3|ivanov_nikita|**7/7**|
 |3821B1FI3|kulaev_zhenya|**7/7**|
 |3821B1FI3|kulagin_aleksandr|**7/7**|
-|3821B1FI3|kulikov_artem|6/7|
+|3821B1FI3|kulikov_artem|**7/7**|
 |3821B1FI3|kuznetsov_artyom|**7/7**|
 |3821B1FI3|pivovarov_alexey|6/7|
 |3821B1FI3|polozov_vladislav|**7/7**|
@@ -659,6 +659,6 @@ Passed: 4
 |3821B1FI3|sharapov_georgiy|**7/7**|
 |3821B1FI3|tyulkina_olga|**7/7**|
 
-Passed: 10
+Passed: 11
 
-**Total Passed: 18**
+**Total Passed: 19**
