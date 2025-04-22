@@ -1,0 +1,26 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/5_jacobi_shared_oneapi/safronov_mikhail/jacobi_shared_oneapi.cpp:27:30: error: no matching function for call to 'reduction'
+   27 |             auto reduction = sycl::reduction(shared_error, cgh, sycl::maximum<>());
+      |                              ^~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2858:6: note: candidate function template not viable: no known conversion from 'sycl::maximum<>' to 'const property_list' for 3rd argument
+ 2858 | auto reduction(T *Var, BinaryOperation Combiner,
+      |      ^
+ 2859 |                const property_list &PropList = {}) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2883:6: note: candidate template ignored: deduced conflicting types for parameter 'T' ('float' vs. 'sycl::handler')
+ 2883 | auto reduction(T *Var, const T &Identity, BinaryOperation Combiner,
+      |      ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2843:6: note: candidate template ignored: could not match 'buffer<T, 1, AllocatorT>' against 'float *'
+ 2843 | auto reduction(buffer<T, 1, AllocatorT> Var, handler &CGH,
+      |      ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2898:6: note: candidate template ignored: could not match 'span<T, Extent>' against 'float *'
+ 2898 | auto reduction(span<T, Extent> Span, BinaryOperation Combiner,
+      |      ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2911:6: note: candidate template ignored: could not match 'span<T, Extent>' against 'float *'
+ 2911 | auto reduction(span<T, Extent> Span, const T &Identity,
+      |      ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2870:6: note: candidate function template not viable: requires at least 4 arguments, but 3 were provided
+ 2870 | auto reduction(buffer<T, 1, AllocatorT> Var, handler &CGH, const T &Identity,
+      |      ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2871 |                BinaryOperation Combiner, const property_list &PropList = {}) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

@@ -428,6 +428,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kostin_artem|0.0079|
 |3821B1FI3|kulikov_artem|0.0080|
 |3821B1FI2|kazantsev_evgeny|0.0080|
+|3821B1FI3|safronov_mikhail|0.0081|
 |3821B1FI3|volodin_evgeniy|0.0091|
 |3821B1FI3|sadikov_damir|0.0093|
 |3821B1FI3|benduyzhko_tatiana|0.0093|
@@ -447,6 +448,7 @@ std::vector<float> GemmMklONEAPI(
 |**REF**|**REF**|**0.4682**|
 |3821B1FI3|durandin_vladimir|0.9917|
 |3821B1FI3|kulikov_artem|0.9977|
+|3821B1FI3|safronov_mikhail|0.9996|
 |3821B1FI2|travin_maksim|1.0000|
 |3821B1FI3|ivanov_nikita|1.0015|
 |3821B1FI2|zawadowski_jan|1.0018|
@@ -503,6 +505,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
 |3821B1FI3|volodin_evgeniy|TOO SLOW|
+|3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 ## 4_jacobi_dev_oneapi (4096 elements)
 |Group|Name|Result|
@@ -535,6 +538,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|kashirin_alexander|0.3994|
 |**REF**|**REF**|**0.6662**|
 |3821B1FI3|volodin_evgeniy|BUILD FAILED|
+|3821B1FI3|safronov_mikhail|TOO SLOW|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
 |Group|Name|Result|
@@ -566,6 +570,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zawadowski_jan|0.3608|
 |3821B1FI1|kashirin_alexander|0.3695|
 |**REF**|**REF**|**0.6341**|
+|3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
@@ -596,6 +601,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|prokofev_kirill|0.9383|
 |3821B1FI1|kashirin_alexander|0.9719|
 |3821B1FI1|bodrov_daniil|1.0162|
+|3821B1FI3|safronov_mikhail|BUILD FAILED|
 |3821B1FI1|bonyuk_peter|BUILD FAILED|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
@@ -628,6 +634,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|balyasov_ivan|0.9790|
 |3821B1FI1|bodrov_daniil|0.9925|
 |3821B1FI3|polozov_vladislav|1.0043|
+|3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 # Tasks Done
 ## 3821B1FI1
@@ -671,6 +678,7 @@ Passed: 4
 |3821B1FI3|polozov_vladislav|**7/7**|
 |3821B1FI3|prokofev_kirill|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
+|3821B1FI3|safronov_mikhail|2/7|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 |3821B1FI3|tyulkina_olga|**7/7**|
 |3821B1FI3|volodin_evgeniy|4/7|
