@@ -415,12 +415,12 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|pivovarov_alexey|0.0058|
 |3821B1FI3|prokofev_kirill|0.0059|
 |3821B1FI2|kostanyan_arsen|0.0060|
-|3821B1FI1|kashirin_alexander|0.0060|
 |3821B1FI3|kulagin_aleksandr|0.0060|
+|3821B1FI1|kashirin_alexander|0.0060|
 |3821B1FI3|savotina_valeria|0.0063|
 |3821B1FI2|zakharov_artem|0.0067|
-|3821B1FI1|balyasov_ivan|0.0067|
 |3821B1FI3|kuznetsov_artyom|0.0067|
+|3821B1FI1|balyasov_ivan|0.0067|
 |3821B1FI1|lysanova_julia|0.0069|
 |3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI3|kulaev_zhenya|0.0073|
@@ -498,6 +498,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kostanyan_arsen|0.2692|
 |3821B1FI3|sharapov_georgiy|0.2747|
 |3821B1FI3|kulaev_zhenya|0.2825|
+|3821B1FI3|durandin_vladimir|0.2841|
 |3821B1FI2|zakharov_artem|0.2855|
 |3821B1FI3|kuznetsov_artyom|0.2886|
 |3821B1FI3|ivanov_nikita|0.2926|
@@ -690,7 +691,7 @@ Passed: 4
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI3|benduyzhko_tatiana|**7/7**|
-|3821B1FI3|durandin_vladimir|2/7|
+|3821B1FI3|durandin_vladimir|3/7|
 |3821B1FI3|ivanov_nikita|**7/7**|
 |3821B1FI3|kulaev_zhenya|**7/7**|
 |3821B1FI3|kulagin_aleksandr|**7/7**|
