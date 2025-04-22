@@ -1,0 +1,10 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/2_integral_oneapi/volodin_evgeniy/integral_oneapi.cpp:21:37: error: no member named 'sin' in namespace 'std'
+   21 |                                std::sin(x) * std::cos(y) * step * step;
+      |                                ~~~~~^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/2_integral_oneapi/volodin_evgeniy/integral_oneapi.cpp:21:51: error: no member named 'cos' in namespace 'std'
+   21 |                                std::sin(x) * std::cos(y) * step * step;
+      |                                              ~~~~~^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/2_integral_oneapi/volodin_evgeniy/integral_oneapi.cpp:21:37: error: SYCL kernel cannot use a non-const global variable
+   21 |                                std::sin(x) * std::cos(y) * step * step;
+      |                                     ^
+3 errors generated.

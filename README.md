@@ -468,6 +468,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shmelev_ivan|TOO SLOW|
 |3821B1FI1|bonyuk_peter|RUN FAILED|
 |3821B1FI3|pivovarov_alexey|TOO SLOW|
+|3821B1FI3|volodin_evgeniy|BUILD FAILED|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 |3821B1FI2|kostin_artem|TEST FAILED|
 
