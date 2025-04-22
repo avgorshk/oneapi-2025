@@ -470,6 +470,7 @@ std::vector<float> GemmMklONEAPI(
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|kostin_artem|0.2355|
 |3821B1FI1|shmelev_ivan|0.2551|
 |3821B1FI1|shipitsin_alex|0.2593|
 |3821B1FI3|prokofev_kirill|0.2649|
@@ -623,7 +624,7 @@ Passed: 3
 |-----|----|------|
 |3821B1FI2|kazantsev_evgeny|6/7|
 |3821B1FI2|kostanyan_arsen|4/7|
-|3821B1FI2|kostin_artem|1/7|
+|3821B1FI2|kostin_artem|2/7|
 |3821B1FI2|loginov_maxim|**7/7**|
 |3821B1FI2|travin_maksim|**7/7**|
 |3821B1FI2|zakharov_artem|**7/7**|
