@@ -1,29 +1,25 @@
 #include "gemm_mkl_oneapi.h"
 #include <oneapi/mkl.hpp>
-#include <cassert>
+#include <vector>
 
-std::vector<float> GemmMKLONEAPI(
+std::vector<float> GemmMklONEAPI(
     const std::vector<float>& a, const std::vector<float>& b,
     size_t size, sycl::device device) {
+    std::vector<float> ans(size * size, 0.0f);
+
     sycl::queue queue(device);
-    std::vector<float> c(size * size, 0.0f);
 
-    float* dev_a = sycl::malloc_device<float>(size * size, queue);
-    float* dev_b = sycl::malloc_device<float>(size * size, queue);
-    float* dev_c = sycl::malloc_device<float>(size * size, queue);
+    {
+        sycl::buffer<float> buf_a(a.data(), a.size());
+        sycl::buffer<float> buf_b(b.data(), b.size());
+        sycl::buffer<float> buf_ans(ans.data(), ans.size());
 
-    queue.memcpy(dev_a, a.data(), size * size * sizeof(float)).wait();
-    queue.memcpy(dev_b, b.data(), size * size * sizeof(float)).wait();
+        auto nontrans = oneapi::mkl::transpose::nontrans;
 
-    oneapi::mkl::blas::row_major::gemm(
-        queue, oneapi::mkl::transpose::nontrans, oneapi::mkl::transpose::nontrans,
-        size, size, size, 1.0f, dev_a, size, dev_b, size, 0.0f, dev_c, size);
+        oneapi::mkl::blas::row_major::gemm(queue, nontrans, nontrans, size, size,
+                                           size, 1, buf_a, size, buf_b, size, 0,
+                                           buf_ans, size);
+    }
 
-    queue.memcpy(c.data(), dev_c, size * size * sizeof(float)).wait();
-
-    sycl::free(dev_a, queue);
-    sycl::free(dev_b, queue);
-    sycl::free(dev_c, queue);
-
-    return c;
+    return ans;
 }
