@@ -1,4 +1,4 @@
-/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/3_jacobi_acc_oneapi/safronov_mikhail/jacobi_acc_oneapi.cpp:1:10: fatal error: 'jacobi_acc.h' file not found
-    1 | #include "jacobi_acc.h"
-      |          ^~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/3_jacobi_acc_oneapi/safronov_mikhail/jacobi_acc_oneapi.cpp:21:21: error: use of undeclared identifier 'ITERATIONS'
+   21 |     while (step++ < ITERATIONS) {
+      |                     ^
 1 error generated.
