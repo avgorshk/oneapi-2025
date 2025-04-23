@@ -517,6 +517,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|vasilev_ivan|0.2932|
 |3821B1FI1|bodrov_daniil|0.3032|
 |3821B1FI2|kazantsev_evgeny|0.3232|
+|3821B1FI3|volodin_evgeniy|0.3332|
 |3821B1FI2|travin_maksim|0.3474|
 |3821B1FI2|zawadowski_jan|0.3533|
 |3821B1FI1|kashirin_alexander|0.3647|
@@ -526,7 +527,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|polozov_vladislav|0.5856|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
-|3821B1FI3|volodin_evgeniy|TOO SLOW|
 |3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 ## 4_jacobi_dev_oneapi (4096 elements)
@@ -742,7 +742,7 @@ Passed: 6
 |3821B1FI3|sharapov_georgiy|**7/7**|
 |3821B1FI3|tyulkina_olga|**7/7**|
 |3821B1FI3|vasilev_ivan|**7/7**|
-|3821B1FI3|volodin_evgeniy|5/7|
+|3821B1FI3|volodin_evgeniy|6/7|
 
 Passed: 17
 
