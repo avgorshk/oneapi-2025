@@ -496,6 +496,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kostin_artem|0.2355|
 |3821B1FI1|shmelev_ivan|0.2551|
 |3821B1FI1|shipitsin_alex|0.2593|
+|3821B1FI3|safarov_nurlan|0.2594|
 |3821B1FI3|prokofev_kirill|0.2649|
 |3821B1FI1|balyasov_ivan|0.2651|
 |3821B1FI1|bonyuk_peter|0.2655|
@@ -731,7 +732,7 @@ Passed: 6
 |3821B1FI3|prokofev_kirill|**7/7**|
 |3821B1FI3|ryabkov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
-|3821B1FI3|safarov_nurlan|2/7|
+|3821B1FI3|safarov_nurlan|3/7|
 |3821B1FI3|safronov_mikhail|2/7|
 |3821B1FI3|savotina_valeria|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
