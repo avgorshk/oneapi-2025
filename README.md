@@ -459,6 +459,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zawadowski_jan|1.0018|
 |3821B1FI3|tyulkina_olga|1.0048|
 |3821B1FI3|kulagin_aleksandr|1.2853|
+|3821B1FI2|kostin_artem|1.3396|
 |3821B1FI3|savotina_valeria|1.3929|
 |3821B1FI3|ryabkov_vladislav|1.3933|
 |3821B1FI1|lysanova_julia|1.3934|
@@ -481,7 +482,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|pivovarov_alexey|TOO SLOW|
 |3821B1FI3|volodin_evgeniy|BUILD FAILED|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
-|3821B1FI2|kostin_artem|TEST FAILED|
 |3821B1FI2|petrov_maksim|TOO SLOW|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
@@ -697,14 +697,14 @@ Passed: 5
 |-----|----|------|
 |3821B1FI2|kazantsev_evgeny|6/7|
 |3821B1FI2|kostanyan_arsen|4/7|
-|3821B1FI2|kostin_artem|6/7|
+|3821B1FI2|kostin_artem|**7/7**|
 |3821B1FI2|loginov_maxim|**7/7**|
 |3821B1FI2|petrov_maksim|6/7|
 |3821B1FI2|travin_maksim|**7/7**|
 |3821B1FI2|zakharov_artem|**7/7**|
 |3821B1FI2|zawadowski_jan|**7/7**|
 
-Passed: 4
+Passed: 5
 
 ## 3821B1FI3
 |Group|Name|Passed|
@@ -730,4 +730,4 @@ Passed: 4
 
 Passed: 15
 
-**Total Passed: 24**
+**Total Passed: 25**
