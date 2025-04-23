@@ -452,6 +452,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |3821B1FI1|bonyuk_peter|0.0356|
 |3821B1FI1|bodrov_daniil|0.0366|
+|3821B1FI3|pivovarov_alexey|0.0367|
 |3821B1FI1|kashirin_alexander|0.0370|
 |**REF**|**REF**|**0.4682**|
 |3821B1FI3|durandin_vladimir|0.9917|
@@ -483,7 +484,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|benduyzhko_tatiana|1.6310|
 |3821B1FI1|shipitsin_alex|TOO SLOW|
 |3821B1FI1|shmelev_ivan|TOO SLOW|
-|3821B1FI3|pivovarov_alexey|TOO SLOW|
 |3821B1FI3|volodin_evgeniy|BUILD FAILED|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 |3821B1FI2|petrov_maksim|TOO SLOW|
@@ -731,7 +731,7 @@ Passed: 6
 |3821B1FI3|kulagin_aleksandr|**7/7**|
 |3821B1FI3|kulikov_artem|**7/7**|
 |3821B1FI3|kuznetsov_artyom|**7/7**|
-|3821B1FI3|pivovarov_alexey|6/7|
+|3821B1FI3|pivovarov_alexey|**7/7**|
 |3821B1FI3|polozov_vladislav|**7/7**|
 |3821B1FI3|prokofev_kirill|**7/7**|
 |3821B1FI3|ryabkov_vladislav|**7/7**|
@@ -744,6 +744,6 @@ Passed: 6
 |3821B1FI3|vasilev_ivan|**7/7**|
 |3821B1FI3|volodin_evgeniy|4/7|
 
-Passed: 16
+Passed: 17
 
-**Total Passed: 28**
+**Total Passed: 29**
