@@ -1,30 +1,51 @@
 #include "integral_oneapi.h"
-#include <range.hpp>
-#include <reduction.hpp>
 
 float IntegralONEAPI(float start, float end, int count, sycl::device device) {
-  float ans = 0.0f;
+    const float step = (end - start) / count;
+    const float area = step * step;
+    float result = 0.0f;
 
-  {
-    sycl::buffer<float> buf_ans(&ans, 1);
-
-    sycl::queue queue(device);
-
-    queue.submit([&](sycl::handler &cgh) {
-      auto reduction = sycl::reduction(buf_ans, cgh, sycl::plus<>());
-
-      cgh.parallel_for(sycl::range<2>(count, count), reduction, [=](sycl::id<2> id, auto& sum) {
-        float Xi = start + (end - start) / count * id.get(0);
-        float Xi_1 = start + (end - start) / count * (id.get(0) + 1);
-        float Yi = start + (end - start) / count * id.get(1);
-        float Yi_1 = start + (end - start) / count * (id.get(1) + 1);
-        sum += sycl::sin((Xi + Xi_1) / 2.0f) * sycl::cos((Yi + Yi_1) / 2.0f) * (Xi_1 - Xi) * (Yi_1 - Yi);
-      });
-    });
-
-    queue.wait();
-  }
-
-
-  return ans;
+    try {
+        sycl::queue q(device);
+        
+        // Округляем размер до ближайшего числа, кратного 16
+        const int rounded_count = ((count + 15) / 16) * 16;
+        
+        // Создаем буфер для результата
+        sycl::buffer<float, 1> result_buf(&result, 1);
+        
+        // Вычисляем интеграл
+        q.submit([&](sycl::handler& h) {
+            auto result_acc = result_buf.get_access<sycl::access::mode::write>(h);
+            
+            h.parallel_for(sycl::nd_range<2>(
+                sycl::range<2>(rounded_count, rounded_count),
+                sycl::range<2>(16, 16)
+            ), [=](sycl::nd_item<2> item) {
+                const int i = item.get_global_id(0);
+                const int j = item.get_global_id(1);
+                
+                // Проверяем, не вышли ли мы за пределы исходного диапазона
+                if (i < count && j < count) {
+                    const float x = start + (i + 0.5f) * step;
+                    const float y = start + (j + 0.5f) * step;
+                    
+                    sycl::atomic_ref<float, sycl::memory_order::relaxed,
+                                   sycl::memory_scope::device,
+                                   sycl::access::address_space::global_space>
+                        result_ref(result_acc[0]);
+                    result_ref.fetch_add(sycl::sin(x) * sycl::cos(y) * area);
+                }
+            });
+        }).wait();
+        
+        auto result_acc = result_buf.get_access<sycl::access::mode::read>();
+        result = result_acc[0];
+        
+    } catch (const sycl::exception& e) {
+        std::cerr << "SYCL Exception: " << e.what() << std::endl;
+        throw;
+    }
+    
+    return result;
 }
