@@ -1,62 +1,77 @@
 #include "gemm_block_oneapi.h"
-#include <cassert>
+#include <buffer.hpp>
+#include <handler.hpp>
+#include <range.hpp>
+#include <reduction.hpp>
+#include <usm.hpp>
+#include <vector>
 
-std::vector<float> GemmBlockONEAPI(
-    const std::vector<float>& a, const std::vector<float>& b,
-    size_t size, sycl::device device) {
-    constexpr size_t BLOCK_SIZE = 16;
-    assert(size % BLOCK_SIZE == 0);
+std::vector<float> GemmBlockONEAPI(const std::vector<float> a,
+                                   const std::vector<float> b, size_t size,
+                                   sycl::device device) {
+  constexpr size_t block_size = 16;
+  size_t total_elements = size * size;
+  std::vector<float> result(total_elements, 0.0f);
 
-    sycl::queue queue(device);
-    std::vector<float> c(size * size, 0.0f);
+  sycl::queue queue(device);
 
-    float* dev_a = sycl::malloc_device<float>(size * size, queue);
-    float* dev_b = sycl::malloc_device<float>(size * size, queue);
-    float* dev_c = sycl::malloc_device<float>(size * size, queue);
+  float *dev_a = sycl::malloc_device<float>(total_elements, queue);
+  float *dev_b = sycl::malloc_device<float>(total_elements, queue);
+  float *dev_c = sycl::malloc_device<float>(total_elements, queue);
 
-    queue.memcpy(dev_a, a.data(), size * size * sizeof(float)).wait();
-    queue.memcpy(dev_b, b.data(), size * size * sizeof(float)).wait();
+  queue.memcpy(dev_a, a.data(), total_elements * sizeof(float)).wait();
+  queue.memcpy(dev_b, b.data(), total_elements * sizeof(float)).wait();
 
-    sycl::range<2> global_range(size, size);
-    sycl::range<2> local_range(BLOCK_SIZE, BLOCK_SIZE);
+  sycl::range<2> global_range((size + block_size - 1) / block_size * block_size,
+                              (size + block_size - 1) / block_size *
+                                  block_size);
+  sycl::range<2> local_range(block_size, block_size);
 
-    queue.submit([&](sycl::handler& cgh) {
-        sycl::local_accessor<float, 2> block_a({BLOCK_SIZE, BLOCK_SIZE}, cgh);
-        sycl::local_accessor<float, 2> block_b({BLOCK_SIZE, BLOCK_SIZE}, cgh);
+  queue.submit([&](sycl::handler &cgh) {
+    sycl::local_accessor<float, 2> block_a(local_range, cgh);
+    sycl::local_accessor<float, 2> block_b(local_range, cgh);
 
-        cgh.parallel_for(sycl::nd_range<2>(global_range, local_range),
-                         [=](sycl::nd_item<2> item) {
-                             size_t global_row = item.get_global_id(0);
-                             size_t global_col = item.get_global_id(1);
-                             size_t local_row = item.get_local_id(0);
-                             size_t local_col = item.get_local_id(1);
+    cgh.parallel_for(sycl::nd_range<2>(global_range, local_range),
+                     [=](sycl::nd_item<2> item) {
+                       int global_y = item.get_global_id(0);
+                       int global_x = item.get_global_id(1);
+                       int local_y = item.get_local_id(0);
+                       int local_x = item.get_local_id(1);
 
-                             float sum = 0.0f;
+                       int grid_dim = item.get_group_range(0);
 
-                             for (size_t block = 0; block < size / BLOCK_SIZE; ++block) {
-                                 block_a[local_row][local_col] =
-                                     dev_a[global_row * size + block * BLOCK_SIZE + local_col];
-                                 block_b[local_row][local_col] =
-                                     dev_b[(block * BLOCK_SIZE + local_row) * size + global_col];
+                       float c_value = 0.0f;
 
-                                 item.barrier(sycl::access::fence_space::local_space);
+                       for (int block_k = 0; block_k < grid_dim; block_k++) {
+                         int tiled_col = block_k * block_size + local_x;
+                         int tiled_row = block_k * block_size + local_y;
 
-                                 for (size_t k = 0; k < BLOCK_SIZE; ++k) {
-                                     sum += block_a[local_row][k] * block_b[k][local_col];
-                                 }
+                         block_a[local_y][local_x] =
+                             dev_a[global_y * size + tiled_col];
 
-                                 item.barrier(sycl::access::fence_space::local_space);
-                             }
+                         block_b[local_y][local_x] =
+                             dev_b[tiled_row * size + global_x];
 
-                             dev_c[global_row * size + global_col] = sum;
-                         });
-    }).wait();
+                         item.barrier(sycl::access::fence_space::local_space);
 
-    queue.memcpy(c.data(), dev_c, size * size * sizeof(float)).wait();
+                         for (int k = 0; k < block_size; k++) {
+                           c_value += block_a[local_y][k] * block_b[k][local_x];
+                         }
 
-    sycl::free(dev_a, queue);
-    sycl::free(dev_b, queue);
-    sycl::free(dev_c, queue);
+                         item.barrier(sycl::access::fence_space::local_space);
+                       }
 
-    return c;
+                       dev_c[global_y * size + global_x] = c_value;
+                     });
+  });
+
+  queue.wait();
+
+  queue.memcpy(result.data(), dev_c, total_elements * sizeof(float)).wait();
+
+  free(dev_a, queue);
+  free(dev_b, queue);
+  free(dev_c, queue);
+
+  return result;
 }
