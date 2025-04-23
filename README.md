@@ -408,6 +408,7 @@ std::vector<float> GemmMklONEAPI(
 ## 1_permutations_cxx (10240 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|isaev_dmitrii|0.0033|
 |3821B1FI1|mirzakhmedov_alexander|0.0038|
 |3821B1FI2|petrov_maksim|0.0039|
 |3821B1FI3|durandin_vladimir|0.0039|
@@ -464,6 +465,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|ryabkov_vladislav|1.3933|
 |3821B1FI1|lysanova_julia|1.3934|
 |3821B1FI3|prokofev_kirill|1.4003|
+|3821B1FI2|isaev_dmitrii|1.4004|
 |3821B1FI3|vasilev_ivan|1.4037|
 |3821B1FI2|loginov_maxim|1.4044|
 |3821B1FI1|mirzakhmedov_alexander|1.4051|
@@ -502,6 +504,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|pivovarov_alexey|0.2686|
 |3821B1FI2|kostanyan_arsen|0.2692|
 |3821B1FI3|sharapov_georgiy|0.2747|
+|3821B1FI2|isaev_dmitrii|0.2791|
 |3821B1FI3|kulaev_zhenya|0.2825|
 |3821B1FI3|durandin_vladimir|0.2841|
 |3821B1FI2|zakharov_artem|0.2855|
@@ -545,6 +548,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulaev_zhenya|0.2069|
 |3821B1FI1|mirzakhmedov_alexander|0.2098|
 |3821B1FI3|prokofev_kirill|0.2100|
+|3821B1FI2|isaev_dmitrii|0.2148|
 |3821B1FI3|ryabkov_vladislav|0.2151|
 |3821B1FI3|kulagin_aleksandr|0.2270|
 |3821B1FI3|kulikov_artem|0.2559|
@@ -580,6 +584,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|petrov_maksim|0.1926|
 |3821B1FI3|pivovarov_alexey|0.1932|
 |3821B1FI1|bonyuk_peter|0.1937|
+|3821B1FI2|isaev_dmitrii|0.1963|
 |3821B1FI3|prokofev_kirill|0.1971|
 |3821B1FI3|vasilev_ivan|0.2001|
 |3821B1FI3|ryabkov_vladislav|0.2002|
@@ -623,6 +628,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulaev_zhenya|0.9010|
 |3821B1FI3|pivovarov_alexey|0.9012|
 |3821B1FI1|balyasov_ivan|0.9016|
+|3821B1FI2|isaev_dmitrii|0.9018|
 |3821B1FI3|vasilev_ivan|0.9022|
 |3821B1FI2|zawadowski_jan|0.9025|
 |3821B1FI3|savotina_valeria|0.9033|
@@ -643,6 +649,7 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
+|3821B1FI2|isaev_dmitrii|0.4872|
 |3821B1FI2|kazantsev_evgeny|0.6009|
 |3821B1FI2|loginov_maxim|0.6507|
 |3821B1FI2|zawadowski_jan|0.6787|
@@ -695,6 +702,7 @@ Passed: 5
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
+|3821B1FI2|isaev_dmitrii|**7/7**|
 |3821B1FI2|kazantsev_evgeny|6/7|
 |3821B1FI2|kostanyan_arsen|4/7|
 |3821B1FI2|kostin_artem|**7/7**|
@@ -704,7 +712,7 @@ Passed: 5
 |3821B1FI2|zakharov_artem|**7/7**|
 |3821B1FI2|zawadowski_jan|**7/7**|
 
-Passed: 5
+Passed: 6
 
 ## 3821B1FI3
 |Group|Name|Passed|
@@ -730,4 +738,4 @@ Passed: 5
 
 Passed: 15
 
-**Total Passed: 25**
+**Total Passed: 26**
