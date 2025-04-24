@@ -1,5 +1,9 @@
 #include "jacobi_acc_oneapi.h"
-#include <sycl/sycl.hpp>
+#include <algorithm>
+#include <buffer.hpp>
+#include <handler.hpp>
+#include <range.hpp>
+#include <reduction.hpp>
 #include <vector>
 
 std::vector<float> JacobiAccONEAPI(const std::vector<float> a,
