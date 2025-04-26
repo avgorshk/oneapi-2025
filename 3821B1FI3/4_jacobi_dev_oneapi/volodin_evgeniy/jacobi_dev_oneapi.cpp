@@ -1,66 +1,69 @@
 #include "jacobi_dev_oneapi.h"
+#include <buffer.hpp>
+#include <handler.hpp>
+#include <range.hpp>
+#include <reduction.hpp>
+#include <usm.hpp>
+#include <vector>
 
 std::vector<float> JacobiDevONEAPI(const std::vector<float> a,
                                    const std::vector<float> b, float accuracy,
                                    sycl::device device) {
+  int size = b.size();
+  int step = 0;
+  float error = 0.0f;
+  std::vector ans(size, 0.0f);
 
-  const int n = b.size();
-  sycl::queue q(device);
+  sycl::queue queue(device);
 
-  float *d_a = sycl::malloc_device<float>(n * n, q);
-  float *d_b = sycl::malloc_device<float>(n, q);
-  float *d_x[2] = {sycl::malloc_device<float>(n, q),
-                   sycl::malloc_device<float>(n, q)};
-  float *d_diff = sycl::malloc_device<float>(1, q);
+  float *dev_a = sycl::malloc_device<float>(a.size(), queue);
+  float *dev_b = sycl::malloc_device<float>(b.size(), queue);
+  float *dev_curr = sycl::malloc_device<float>(size, queue);
+  float *dev_prev = sycl::malloc_device<float>(size, queue);
+  float *dev_error = sycl::malloc_device<float>(1, queue);
 
-  q.memcpy(d_a, a.data(), sizeof(float) * n * n).wait();
-  q.memcpy(d_b, b.data(), sizeof(float) * n).wait();
-  q.memset(d_x[0], 0, sizeof(float) * n).wait();
-  q.memset(d_x[1], 0, sizeof(float) * n).wait();
+  queue.memcpy(dev_a, a.data(), a.size() * sizeof(float)).wait();
+  queue.memcpy(dev_b, b.data(), b.size() * sizeof(float)).wait();
+  queue.memset(dev_curr, 0, sizeof(float) * size);
+  queue.memset(dev_prev, 0, sizeof(float) * size);
+  queue.memset(dev_error, 0, sizeof(float));
 
-  int last = 0;
-  float norm2 = 0.0f;
-  int iter = 0;
+  while (step++ < ITERATIONS) {
+    auto reduction = sycl::reduction(dev_error, sycl::maximum<>());
 
-  while (iter < ITERATIONS) {
-    iter++;
+    queue.parallel_for(sycl::range<1>(size), reduction,
+                       [=](sycl::id<1> id, auto &error) {
+                         int i = id.get(0);
+                         float curr = dev_b[i];
+                         for (int j = 0; j < size; j++) {
+                           if (i != j) {
+                             curr -= dev_a[i * size + j] * dev_prev[j];
+                           }
+                         }
+                         curr /= dev_a[i * size + i];
+                         dev_curr[i] = curr;
 
-    q.parallel_for(sycl::range<1>(n), [=](sycl::id<1> i) {
-      float sigma = 0.0f;
-      for (int j = 0; j < n; j++) {
-        if (j != i[0])
-          sigma += d_a[i[0] * n + j] * d_x[last][j];
-      }
-      d_x[1 - last][i] = (d_b[i] - sigma) / d_a[i[0] * n + i[0]];
-    });
+                         float diff = sycl::fabs(curr - dev_prev[i]);
+                         error.combine(diff);
+                       });
 
-    q.submit([&](sycl::handler &h) {
-      h.single_task([=]() {
-        float sum = 0.0f;
-        for (int i = 0; i < n; ++i) {
-          float diff = d_x[1 - last][i] - d_x[last][i];
-          sum += diff * diff;
-        }
-        *d_diff = sum;
-      });
-    });
+    queue.wait();
 
-    q.memcpy(&norm2, d_diff, sizeof(float)).wait();
-
-    if (norm2 < accuracy * accuracy)
+    queue.memcpy(&error, dev_error, sizeof(float)).wait();
+    if (error < accuracy)
       break;
+    queue.memset(dev_error, 0, sizeof(float)).wait();
 
-    last = 1 - last;
+    queue.memcpy(dev_prev, dev_curr, size * sizeof(float)).wait();
   }
 
-  std::vector<float> result(n);
-  q.memcpy(result.data(), d_x[last], sizeof(float) * n).wait();
+  queue.memcpy(ans.data(), dev_curr, size * sizeof(float)).wait();
 
-  sycl::free(d_a, q);
-  sycl::free(d_b, q);
-  sycl::free(d_x[0], q);
-  sycl::free(d_x[1], q);
-  sycl::free(d_diff, q);
+  sycl::free(dev_a, queue);
+  sycl::free(dev_b, queue);
+  sycl::free(dev_curr, queue);
+  sycl::free(dev_prev, queue);
+  sycl::free(dev_error, queue);
 
-  return result;
+  return ans;
 }
