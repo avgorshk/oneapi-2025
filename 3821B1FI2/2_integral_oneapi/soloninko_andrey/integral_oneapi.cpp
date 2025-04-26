@@ -4,6 +4,7 @@
 
 float IntegralONEAPI(float start, float end, int count, sycl::device device) {
   float ans = 0.0f;
+  float step = (end - start) / count;
 
   {
     sycl::buffer<float> buf_ans(&ans, 1);
@@ -16,12 +17,12 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
       cgh.parallel_for(
           sycl::range<2>(count, count), reduction,
           [=](sycl::id<2> id, auto &sum) {
-            float Xi = start + (end - start) / count * id.get(0);
-            float Xi_1 = start + (end - start) / count * (id.get(0) + 1);
-            float Yi = start + (end - start) / count * id.get(1);
-            float Yi_1 = start + (end - start) / count * (id.get(1) + 1);
-            sum += sycl::sin((Xi + Xi_1) / 2.0f) *
-                   sycl::cos((Yi + Yi_1) / 2.0f) * (Xi_1 - Xi) * (Yi_1 - Yi);
+            float Xi = start + step * id.get(0);
+            float Xi_1 = start + step * (id.get(0) + 1);
+            float Yi = start + step * id.get(1);
+            float Yi_1 = start + step * (id.get(1) + 1);
+            sum += sycl::sin((Xi + Xi_1) * 0.5f) *
+                   sycl::cos((Yi + Yi_1) * 0.5f) * (Xi_1 - Xi) * (Yi_1 - Yi);
           });
     });
 
