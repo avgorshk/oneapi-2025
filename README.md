@@ -427,6 +427,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|lysanova_julia|0.0069|
 |3821B1FI2|soloninko_andrey|0.0070|
 |3821B1FI3|sharapov_georgiy|0.0070|
+|3821B1FI3|korablev_nikita|0.0073|
 |3821B1FI3|kulaev_zhenya|0.0073|
 |3821B1FI1|bonyuk_peter|0.0074|
 |3821B1FI3|safarov_nurlan|0.0075|
@@ -466,6 +467,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|ivanov_nikita|1.0015|
 |3821B1FI2|zawadowski_jan|1.0018|
 |3821B1FI3|tyulkina_olga|1.0048|
+|3821B1FI3|korablev_nikita|1.0086|
 |3821B1FI3|kulagin_aleksandr|1.2853|
 |3821B1FI2|kostin_artem|1.3396|
 |3821B1FI3|savotina_valeria|1.3929|
@@ -525,6 +527,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|ivanov_nikita|0.2926|
 |3821B1FI3|vasilev_ivan|0.2932|
 |3821B1FI1|bodrov_daniil|0.3032|
+|3821B1FI3|korablev_nikita|0.3170|
 |3821B1FI2|kazantsev_evgeny|0.3232|
 |3821B1FI3|volodin_evgeniy|0.3332|
 |3821B1FI2|travin_maksim|0.3474|
@@ -570,6 +573,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|kazantsev_evgeny|0.2707|
 |3821B1FI3|sadikov_damir|0.2827|
 |3821B1FI3|polozov_vladislav|0.2890|
+|3821B1FI3|korablev_nikita|0.3057|
 |3821B1FI2|travin_maksim|0.3224|
 |3821B1FI3|tyulkina_olga|0.3359|
 |3821B1FI3|benduyzhko_tatiana|0.3370|
@@ -612,6 +616,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|kulaev_zhenya|0.2021|
 |3821B1FI3|kulagin_aleksandr|0.2055|
 |3821B1FI1|mirzakhmedov_alexander|0.2076|
+|3821B1FI3|korablev_nikita|0.2633|
 |3821B1FI3|kulikov_artem|0.2676|
 |3821B1FI3|ivanov_nikita|0.2710|
 |3821B1FI3|polozov_vladislav|0.2711|
@@ -657,6 +662,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|isaev_dmitrii|0.9018|
 |3821B1FI3|vasilev_ivan|0.9022|
 |3821B1FI2|zawadowski_jan|0.9025|
+|3821B1FI3|korablev_nikita|0.9030|
 |3821B1FI3|savotina_valeria|0.9033|
 |3821B1FI3|kuznetsov_artyom|0.9044|
 |3821B1FI2|petrov_maksim|0.9142|
@@ -709,6 +715,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|lysanova_julia|0.9668|
 |3821B1FI3|safarov_nurlan|0.9733|
 |3821B1FI1|balyasov_ivan|0.9790|
+|3821B1FI3|korablev_nikita|0.9860|
 |3821B1FI1|bodrov_daniil|0.9925|
 |3821B1FI3|polozov_vladislav|1.0043|
 |3821B1FI3|safronov_mikhail|BUILD FAILED|
@@ -752,6 +759,7 @@ Passed: 7
 |3821B1FI3|benduyzhko_tatiana|**7/7**|
 |3821B1FI3|durandin_vladimir|**7/7**|
 |3821B1FI3|ivanov_nikita|**7/7**|
+|3821B1FI3|korablev_nikita|**7/7**|
 |3821B1FI3|kulaev_zhenya|**7/7**|
 |3821B1FI3|kulagin_aleksandr|**7/7**|
 |3821B1FI3|kulikov_artem|**7/7**|
@@ -769,6 +777,6 @@ Passed: 7
 |3821B1FI3|vasilev_ivan|**7/7**|
 |3821B1FI3|volodin_evgeniy|6/7|
 
-Passed: 17
+Passed: 18
 
-**Total Passed: 31**
+**Total Passed: 32**
