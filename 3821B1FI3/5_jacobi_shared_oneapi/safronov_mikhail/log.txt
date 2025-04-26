@@ -1,4 +1,0 @@
-/home/crazyproger/sandbox/oneapi-2025/3821B1FI3/5_jacobi_shared_oneapi/safronov_mikhail/jacobi_shared_oneapi.cpp:30:19: error: use of undeclared identifier 'ITERATIONS'
-   30 |   while (step++ < ITERATIONS) {
-      |                   ^
-1 error generated.
