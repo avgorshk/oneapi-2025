@@ -421,6 +421,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|kashirin_alexander|0.0060|
 |3821B1FI3|kulagin_aleksandr|0.0060|
 |3821B1FI3|savotina_valeria|0.0063|
+|3821B1FI3|simonyan_suren|0.0067|
 |3821B1FI2|zakharov_artem|0.0067|
 |3821B1FI1|balyasov_ivan|0.0067|
 |3821B1FI3|kuznetsov_artyom|0.0067|
@@ -470,6 +471,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|tyulkina_olga|1.0048|
 |3821B1FI3|korablev_nikita|1.0086|
 |3821B1FI3|kulagin_aleksandr|1.2853|
+|3821B1FI3|simonyan_suren|1.2950|
 |3821B1FI2|kostin_artem|1.3396|
 |3821B1FI2|kazantsev_evgeny|1.3527|
 |3821B1FI3|savotina_valeria|1.3929|
@@ -539,6 +541,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|polozov_vladislav|0.5856|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
+|3821B1FI3|simonyan_suren|0.9227|
 
 ## 4_jacobi_dev_oneapi (4096 elements)
 |Group|Name|Result|
@@ -549,6 +552,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|volodin_evgeniy|0.1848|
 |3821B1FI1|shipitsin_alex|0.1855|
 |3821B1FI1|shmelev_ivan|0.1874|
+|3821B1FI3|simonyan_suren|0.1952|
 |3821B1FI2|soloninko_andrey|0.1982|
 |3821B1FI3|savotina_valeria|0.1986|
 |3821B1FI3|kuznetsov_artyom|0.1987|
@@ -614,6 +618,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|ryabkov_vladislav|0.2002|
 |3821B1FI1|shipitsin_alex|0.2007|
 |3821B1FI3|kulaev_zhenya|0.2021|
+|3821B1FI3|simonyan_suren|0.2047|
 |3821B1FI3|kulagin_aleksandr|0.2055|
 |3821B1FI1|mirzakhmedov_alexander|0.2076|
 |3821B1FI3|korablev_nikita|0.2633|
@@ -636,6 +641,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|borovkov_sergey|0.8200|
 |3821B1FI2|kostanyan_arsen|0.8220|
 |3821B1FI3|tyulkina_olga|0.8278|
+|3821B1FI3|simonyan_suren|0.8326|
 |3821B1FI2|travin_maksim|0.8332|
 |3821B1FI2|soloninko_andrey|0.8369|
 |3821B1FI2|kazantsev_evgeny|0.8484|
@@ -688,6 +694,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|pivovarov_alexey|0.7002|
 |3821B1FI3|tyulkina_olga|0.7044|
 |3821B1FI2|soloninko_andrey|0.7344|
+|3821B1FI3|simonyan_suren|0.7454|
 |3821B1FI1|shipitsin_alex|0.7713|
 |3821B1FI1|borovkov_sergey|0.7744|
 |3821B1FI3|benduyzhko_tatiana|0.7849|
@@ -773,10 +780,11 @@ Passed: 10
 |3821B1FI3|safronov_mikhail|6/7|
 |3821B1FI3|savotina_valeria|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
+|3821B1FI3|simonyan_suren|**7/7**|
 |3821B1FI3|tyulkina_olga|**7/7**|
 |3821B1FI3|vasilev_ivan|**7/7**|
 |3821B1FI3|volodin_evgeniy|**7/7**|
 
-Passed: 19
+Passed: 20
 
-**Total Passed: 36**
+**Total Passed: 37**
