@@ -546,6 +546,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|safronov_mikhail|0.1772|
 |3821B1FI1|bonyuk_peter|0.1829|
 |3821B1FI1|borovkov_sergey|0.1830|
+|3821B1FI3|volodin_evgeniy|0.1848|
 |3821B1FI1|shipitsin_alex|0.1855|
 |3821B1FI1|shmelev_ivan|0.1874|
 |3821B1FI2|soloninko_andrey|0.1982|
@@ -583,7 +584,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|kashirin_alexander|0.3994|
 |**REF**|**REF**|**0.6662**|
 |3821B1FI1|pushkarev_ilya|0.6729|
-|3821B1FI3|volodin_evgeniy|TEST FAILED|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
 |Group|Name|Result|
@@ -775,8 +775,8 @@ Passed: 10
 |3821B1FI3|sharapov_georgiy|**7/7**|
 |3821B1FI3|tyulkina_olga|**7/7**|
 |3821B1FI3|vasilev_ivan|**7/7**|
-|3821B1FI3|volodin_evgeniy|6/7|
+|3821B1FI3|volodin_evgeniy|**7/7**|
 
-Passed: 18
+Passed: 19
 
-**Total Passed: 35**
+**Total Passed: 36**
