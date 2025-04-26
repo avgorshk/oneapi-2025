@@ -425,8 +425,8 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|balyasov_ivan|0.0067|
 |3821B1FI3|kuznetsov_artyom|0.0067|
 |3821B1FI1|lysanova_julia|0.0069|
-|3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI2|soloninko_andrey|0.0070|
+|3821B1FI3|sharapov_georgiy|0.0070|
 |3821B1FI3|kulaev_zhenya|0.0073|
 |3821B1FI1|bonyuk_peter|0.0074|
 |3821B1FI3|safarov_nurlan|0.0075|
@@ -491,6 +491,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|borovkov_sergey|TOO SLOW|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
 |3821B1FI2|petrov_maksim|TOO SLOW|
+|3821B1FI2|soloninko_andrey|TOO SLOW|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
