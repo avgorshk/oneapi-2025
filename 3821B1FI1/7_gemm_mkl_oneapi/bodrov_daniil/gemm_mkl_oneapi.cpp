@@ -13,10 +13,10 @@ std::vector<float> GemmMklONEAPI(
     sycl::buffer<float, 1> matrix_c(result.data(), sycl::range<1>(result.size()));
     
     try {
-        oneapi::mkl::blas::column_major::gemm(
+        oneapi::mkl::blas::row_major::gemm(
             q,
-            oneapi::mkl::transpose::trans,
-            oneapi::mkl::transpose::trans,
+            oneapi::mkl::transpose::nontrans,
+            oneapi::mkl::transpose::nontrans,
             size,
             size,
             size,

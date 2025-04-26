@@ -408,57 +408,271 @@ std::vector<float> GemmMklONEAPI(
 ## 1_permutations_cxx (10240 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|isaev_dmitrii|0.0033|
+|3821B1FI1|mirzakhmedov_alexander|0.0038|
+|3821B1FI2|petrov_maksim|0.0039|
+|3821B1FI3|durandin_vladimir|0.0039|
+|3821B1FI1|borovkov_sergey|0.0049|
+|3821B1FI1|shipitsin_alex|0.0053|
 |3821B1FI1|bodrov_daniil|0.0054|
+|3821B1FI3|pivovarov_alexey|0.0058|
+|3821B1FI3|prokofev_kirill|0.0059|
+|3821B1FI2|kostanyan_arsen|0.0060|
+|3821B1FI1|kashirin_alexander|0.0060|
+|3821B1FI3|kulagin_aleksandr|0.0060|
+|3821B1FI3|savotina_valeria|0.0063|
 |3821B1FI2|zakharov_artem|0.0067|
+|3821B1FI1|balyasov_ivan|0.0067|
+|3821B1FI3|kuznetsov_artyom|0.0067|
+|3821B1FI1|lysanova_julia|0.0069|
+|3821B1FI2|soloninko_andrey|0.0070|
 |3821B1FI3|sharapov_georgiy|0.0070|
+|3821B1FI3|korablev_nikita|0.0073|
+|3821B1FI3|kulaev_zhenya|0.0073|
+|3821B1FI1|bonyuk_peter|0.0074|
+|3821B1FI3|safarov_nurlan|0.0075|
+|3821B1FI3|ryabkov_vladislav|0.0076|
+|3821B1FI2|zawadowski_jan|0.0078|
+|3821B1FI2|loginov_maxim|0.0078|
+|3821B1FI2|kostin_artem|0.0079|
+|3821B1FI3|ivanov_nikita|0.0079|
+|3821B1FI3|vasilev_ivan|0.0079|
+|3821B1FI2|kazantsev_evgeny|0.0080|
 |3821B1FI3|kulikov_artem|0.0080|
+|3821B1FI3|safronov_mikhail|0.0081|
+|3821B1FI3|volodin_evgeniy|0.0091|
 |3821B1FI3|sadikov_damir|0.0093|
+|3821B1FI3|benduyzhko_tatiana|0.0093|
+|3821B1FI3|tyulkina_olga|0.0095|
+|3821B1FI1|shmelev_ivan|0.0099|
+|3821B1FI2|travin_maksim|0.0104|
+|3821B1FI3|polozov_vladislav|0.0107|
 |**REF**|**REF**|**0.8951**|
-|3821B1FI3|durandin_vladimir|TOO SLOW|
-|3821B1FI3|ivanov_nikita|TEST FAILED|
+|3821B1FI1|pushkarev_ilya|TEST FAILED|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|shipitsin_alex|0.0334|
+|3821B1FI1|bonyuk_peter|0.0356|
+|3821B1FI1|bodrov_daniil|0.0366|
+|3821B1FI3|pivovarov_alexey|0.0367|
+|3821B1FI1|kashirin_alexander|0.0370|
+|3821B1FI2|petrov_maksim|0.4503|
+|3821B1FI3|volodin_evgeniy|0.4515|
 |**REF**|**REF**|**0.4682**|
 |3821B1FI3|durandin_vladimir|0.9917|
 |3821B1FI3|kulikov_artem|0.9977|
+|3821B1FI3|safronov_mikhail|0.9996|
+|3821B1FI2|travin_maksim|1.0000|
+|3821B1FI3|ivanov_nikita|1.0015|
+|3821B1FI2|zawadowski_jan|1.0018|
+|3821B1FI3|tyulkina_olga|1.0048|
+|3821B1FI3|korablev_nikita|1.0086|
+|3821B1FI3|kulagin_aleksandr|1.2853|
+|3821B1FI2|kostin_artem|1.3396|
+|3821B1FI3|savotina_valeria|1.3929|
+|3821B1FI3|ryabkov_vladislav|1.3933|
+|3821B1FI1|lysanova_julia|1.3934|
+|3821B1FI3|prokofev_kirill|1.4003|
+|3821B1FI2|isaev_dmitrii|1.4004|
+|3821B1FI3|vasilev_ivan|1.4037|
+|3821B1FI2|loginov_maxim|1.4044|
+|3821B1FI1|mirzakhmedov_alexander|1.4051|
+|3821B1FI2|zakharov_artem|1.4051|
+|3821B1FI1|balyasov_ivan|1.4059|
+|3821B1FI3|safarov_nurlan|1.4079|
+|3821B1FI3|kuznetsov_artyom|1.4179|
+|3821B1FI2|kostanyan_arsen|1.4367|
 |3821B1FI3|sharapov_georgiy|1.4472|
+|3821B1FI3|polozov_vladislav|1.4476|
 |3821B1FI3|sadikov_damir|1.4479|
-|3821B1FI3|ivanov_nikita|BUILD FAILED|
-|3821B1FI1|bodrov_daniil|TOO SLOW|
+|3821B1FI3|kulaev_zhenya|1.4486|
+|3821B1FI3|benduyzhko_tatiana|1.6310|
+|3821B1FI1|shmelev_ivan|TOO SLOW|
+|3821B1FI1|pushkarev_ilya|BUILD FAILED|
+|3821B1FI1|borovkov_sergey|TOO SLOW|
+|3821B1FI2|kazantsev_evgeny|BUILD FAILED|
+|3821B1FI2|soloninko_andrey|TOO SLOW|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|mirzakhmedov_alexander|0.2204|
+|3821B1FI2|petrov_maksim|0.2334|
+|3821B1FI2|kostin_artem|0.2355|
+|3821B1FI1|borovkov_sergey|0.2373|
+|3821B1FI3|safronov_mikhail|0.2539|
+|3821B1FI1|shmelev_ivan|0.2551|
+|3821B1FI1|shipitsin_alex|0.2593|
+|3821B1FI3|safarov_nurlan|0.2594|
+|3821B1FI2|soloninko_andrey|0.2597|
+|3821B1FI3|prokofev_kirill|0.2649|
+|3821B1FI1|balyasov_ivan|0.2651|
+|3821B1FI1|bonyuk_peter|0.2655|
+|3821B1FI1|lysanova_julia|0.2671|
+|3821B1FI3|kulagin_aleksandr|0.2671|
+|3821B1FI3|savotina_valeria|0.2673|
+|3821B1FI1|pushkarev_ilya|0.2676|
+|3821B1FI2|loginov_maxim|0.2677|
+|3821B1FI3|pivovarov_alexey|0.2686|
+|3821B1FI2|kostanyan_arsen|0.2692|
 |3821B1FI3|sharapov_georgiy|0.2747|
+|3821B1FI2|isaev_dmitrii|0.2791|
+|3821B1FI3|kulaev_zhenya|0.2825|
+|3821B1FI3|durandin_vladimir|0.2841|
+|3821B1FI2|zakharov_artem|0.2855|
+|3821B1FI3|kuznetsov_artyom|0.2886|
+|3821B1FI3|ryabkov_vladislav|0.2902|
+|3821B1FI3|ivanov_nikita|0.2926|
+|3821B1FI3|vasilev_ivan|0.2932|
 |3821B1FI1|bodrov_daniil|0.3032|
+|3821B1FI3|korablev_nikita|0.3170|
+|3821B1FI2|kazantsev_evgeny|0.3232|
+|3821B1FI3|volodin_evgeniy|0.3332|
+|3821B1FI2|travin_maksim|0.3474|
+|3821B1FI2|zawadowski_jan|0.3533|
+|3821B1FI1|kashirin_alexander|0.3647|
 |3821B1FI3|kulikov_artem|0.3709|
+|3821B1FI3|benduyzhko_tatiana|0.4267|
+|3821B1FI3|tyulkina_olga|0.5634|
+|3821B1FI3|polozov_vladislav|0.5856|
 |3821B1FI3|sadikov_damir|0.6114|
 |**REF**|**REF**|**0.6595**|
 
 ## 4_jacobi_dev_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI3|safronov_mikhail|0.1772|
+|3821B1FI1|bonyuk_peter|0.1829|
+|3821B1FI1|borovkov_sergey|0.1830|
+|3821B1FI1|shipitsin_alex|0.1855|
+|3821B1FI1|shmelev_ivan|0.1874|
+|3821B1FI2|soloninko_andrey|0.1982|
+|3821B1FI3|savotina_valeria|0.1986|
+|3821B1FI3|kuznetsov_artyom|0.1987|
+|3821B1FI1|balyasov_ivan|0.1988|
+|3821B1FI2|zakharov_artem|0.1993|
+|3821B1FI3|durandin_vladimir|0.1998|
+|3821B1FI2|loginov_maxim|0.1999|
+|3821B1FI2|petrov_maksim|0.2010|
+|3821B1FI2|kostin_artem|0.2025|
+|3821B1FI3|pivovarov_alexey|0.2033|
+|3821B1FI2|kostanyan_arsen|0.2042|
+|3821B1FI1|lysanova_julia|0.2052|
 |3821B1FI3|sharapov_georgiy|0.2053|
+|3821B1FI3|vasilev_ivan|0.2054|
+|3821B1FI3|kulaev_zhenya|0.2069|
+|3821B1FI3|safarov_nurlan|0.2079|
+|3821B1FI1|mirzakhmedov_alexander|0.2098|
+|3821B1FI3|prokofev_kirill|0.2100|
+|3821B1FI2|isaev_dmitrii|0.2148|
+|3821B1FI3|ryabkov_vladislav|0.2151|
+|3821B1FI3|kulagin_aleksandr|0.2270|
+|3821B1FI3|kulikov_artem|0.2559|
+|3821B1FI2|kazantsev_evgeny|0.2707|
 |3821B1FI3|sadikov_damir|0.2827|
+|3821B1FI3|polozov_vladislav|0.2890|
+|3821B1FI3|korablev_nikita|0.3057|
+|3821B1FI2|travin_maksim|0.3224|
+|3821B1FI3|tyulkina_olga|0.3359|
+|3821B1FI3|benduyzhko_tatiana|0.3370|
 |3821B1FI1|bodrov_daniil|0.3388|
+|3821B1FI2|zawadowski_jan|0.3598|
+|3821B1FI3|ivanov_nikita|0.3635|
+|3821B1FI1|kashirin_alexander|0.3994|
 |**REF**|**REF**|**0.6662**|
+|3821B1FI1|pushkarev_ilya|0.6729|
+|3821B1FI3|volodin_evgeniy|TEST FAILED|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
 |Group|Name|Result|
 |-----|----|------|
 |3821B1FI3|sharapov_georgiy|0.1545|
+|3821B1FI2|zakharov_artem|0.1564|
+|3821B1FI3|durandin_vladimir|0.1606|
+|3821B1FI2|soloninko_andrey|0.1675|
+|3821B1FI1|borovkov_sergey|0.1680|
+|3821B1FI2|kostin_artem|0.1704|
+|3821B1FI1|pushkarev_ilya|0.1750|
+|3821B1FI1|shmelev_ivan|0.1770|
+|3821B1FI3|kuznetsov_artyom|0.1792|
+|3821B1FI3|tyulkina_olga|0.1798|
+|3821B1FI3|safarov_nurlan|0.1873|
+|3821B1FI3|safronov_mikhail|0.1876|
+|3821B1FI3|benduyzhko_tatiana|0.1879|
+|3821B1FI2|loginov_maxim|0.1883|
+|3821B1FI3|savotina_valeria|0.1897|
+|3821B1FI1|lysanova_julia|0.1906|
+|3821B1FI1|balyasov_ivan|0.1912|
+|3821B1FI2|petrov_maksim|0.1926|
+|3821B1FI3|pivovarov_alexey|0.1932|
+|3821B1FI1|bonyuk_peter|0.1937|
+|3821B1FI2|isaev_dmitrii|0.1963|
+|3821B1FI3|prokofev_kirill|0.1971|
+|3821B1FI3|vasilev_ivan|0.2001|
+|3821B1FI3|ryabkov_vladislav|0.2002|
+|3821B1FI1|shipitsin_alex|0.2007|
+|3821B1FI3|kulaev_zhenya|0.2021|
+|3821B1FI3|kulagin_aleksandr|0.2055|
+|3821B1FI1|mirzakhmedov_alexander|0.2076|
+|3821B1FI3|korablev_nikita|0.2633|
+|3821B1FI3|kulikov_artem|0.2676|
+|3821B1FI3|ivanov_nikita|0.2710|
+|3821B1FI3|polozov_vladislav|0.2711|
+|3821B1FI2|kazantsev_evgeny|0.2721|
 |3821B1FI3|sadikov_damir|0.2724|
 |3821B1FI1|bodrov_daniil|0.3076|
+|3821B1FI3|volodin_evgeniy|0.3227|
+|3821B1FI2|travin_maksim|0.3601|
+|3821B1FI2|zawadowski_jan|0.3608|
+|3821B1FI1|kashirin_alexander|0.3695|
 |**REF**|**REF**|**0.6341**|
+|3821B1FI2|kostanyan_arsen|0.8133|
 
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|borovkov_sergey|0.8200|
+|3821B1FI2|kostanyan_arsen|0.8220|
+|3821B1FI3|tyulkina_olga|0.8278|
+|3821B1FI2|travin_maksim|0.8332|
+|3821B1FI2|soloninko_andrey|0.8369|
+|3821B1FI2|kazantsev_evgeny|0.8484|
+|3821B1FI1|shipitsin_alex|0.8530|
+|3821B1FI3|kulagin_aleksandr|0.8541|
+|3821B1FI1|pushkarev_ilya|0.8616|
 |**REF**|**REF**|**0.8759**|
+|3821B1FI3|safronov_mikhail|0.8912|
+|3821B1FI1|lysanova_julia|0.8928|
+|3821B1FI1|shmelev_ivan|0.8931|
+|3821B1FI2|loginov_maxim|0.8935|
+|3821B1FI2|zakharov_artem|0.8939|
+|3821B1FI3|ryabkov_vladislav|0.8944|
+|3821B1FI3|benduyzhko_tatiana|0.8946|
+|3821B1FI3|kulikov_artem|0.8975|
+|3821B1FI3|ivanov_nikita|0.8976|
+|3821B1FI3|safarov_nurlan|0.8977|
+|3821B1FI1|mirzakhmedov_alexander|0.8982|
 |3821B1FI3|sharapov_georgiy|0.8987|
+|3821B1FI3|durandin_vladimir|0.8999|
+|3821B1FI3|kulaev_zhenya|0.9010|
+|3821B1FI3|pivovarov_alexey|0.9012|
+|3821B1FI1|balyasov_ivan|0.9016|
+|3821B1FI2|isaev_dmitrii|0.9018|
+|3821B1FI3|vasilev_ivan|0.9022|
+|3821B1FI2|zawadowski_jan|0.9025|
+|3821B1FI3|korablev_nikita|0.9030|
+|3821B1FI3|savotina_valeria|0.9033|
+|3821B1FI3|kuznetsov_artyom|0.9044|
+|3821B1FI2|petrov_maksim|0.9142|
+|3821B1FI3|polozov_vladislav|0.9244|
+|3821B1FI2|kostin_artem|0.9246|
+|3821B1FI3|volodin_evgeniy|0.9248|
 |3821B1FI3|sadikov_damir|0.9324|
+|3821B1FI3|prokofev_kirill|0.9383|
+|3821B1FI1|kashirin_alexander|0.9719|
+|3821B1FI1|bonyuk_peter|0.9923|
 |3821B1FI1|bodrov_daniil|1.0162|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
@@ -466,33 +680,103 @@ std::vector<float> GemmMklONEAPI(
 |-----|----|------|
 |**REF**|**REF**|**0.2893**|
 |3821B1FI3|sadikov_damir|0.4335|
+|3821B1FI2|isaev_dmitrii|0.4872|
+|3821B1FI2|kazantsev_evgeny|0.6009|
+|3821B1FI2|loginov_maxim|0.6507|
+|3821B1FI2|zawadowski_jan|0.6787|
+|3821B1FI3|kuznetsov_artyom|0.6912|
+|3821B1FI3|pivovarov_alexey|0.7002|
+|3821B1FI3|tyulkina_olga|0.7044|
+|3821B1FI2|soloninko_andrey|0.7344|
+|3821B1FI1|shipitsin_alex|0.7713|
+|3821B1FI1|borovkov_sergey|0.7744|
+|3821B1FI3|benduyzhko_tatiana|0.7849|
+|3821B1FI1|bonyuk_peter|0.7913|
+|3821B1FI3|kulaev_zhenya|0.7945|
+|3821B1FI3|kulikov_artem|0.7959|
+|3821B1FI2|travin_maksim|0.7961|
+|3821B1FI1|pushkarev_ilya|0.7966|
+|3821B1FI3|prokofev_kirill|0.8055|
+|3821B1FI3|savotina_valeria|0.8079|
+|3821B1FI1|kashirin_alexander|0.8137|
 |3821B1FI3|sharapov_georgiy|0.8169|
-|3821B1FI1|bodrov_daniil|TEST FAILED|
+|3821B1FI1|mirzakhmedov_alexander|0.8302|
+|3821B1FI3|ivanov_nikita|0.8374|
+|3821B1FI2|kostanyan_arsen|0.8474|
+|3821B1FI3|volodin_evgeniy|0.8689|
+|3821B1FI2|kostin_artem|0.9371|
+|3821B1FI1|shmelev_ivan|0.9394|
+|3821B1FI3|ryabkov_vladislav|0.9400|
+|3821B1FI3|durandin_vladimir|0.9522|
+|3821B1FI2|zakharov_artem|0.9576|
+|3821B1FI2|petrov_maksim|0.9633|
+|3821B1FI3|kulagin_aleksandr|0.9653|
+|3821B1FI3|vasilev_ivan|0.9656|
+|3821B1FI1|lysanova_julia|0.9668|
+|3821B1FI3|safarov_nurlan|0.9733|
+|3821B1FI1|balyasov_ivan|0.9790|
+|3821B1FI3|korablev_nikita|0.9860|
+|3821B1FI1|bodrov_daniil|0.9925|
+|3821B1FI3|polozov_vladislav|1.0043|
+|3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 # Tasks Done
 ## 3821B1FI1
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI1|bodrov_daniil|5/7|
+|3821B1FI1|balyasov_ivan|**7/7**|
+|3821B1FI1|bodrov_daniil|**7/7**|
+|3821B1FI1|bonyuk_peter|**7/7**|
+|3821B1FI1|borovkov_sergey|6/7|
+|3821B1FI1|kashirin_alexander|**7/7**|
+|3821B1FI1|lysanova_julia|**7/7**|
+|3821B1FI1|mirzakhmedov_alexander|**7/7**|
+|3821B1FI1|pushkarev_ilya|5/7|
+|3821B1FI1|shipitsin_alex|**7/7**|
+|3821B1FI1|shmelev_ivan|6/7|
 
-Passed: 0
+Passed: 7
 
 ## 3821B1FI2
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI2|zakharov_artem|1/7|
+|3821B1FI2|isaev_dmitrii|**7/7**|
+|3821B1FI2|kazantsev_evgeny|6/7|
+|3821B1FI2|kostanyan_arsen|**7/7**|
+|3821B1FI2|kostin_artem|**7/7**|
+|3821B1FI2|loginov_maxim|**7/7**|
+|3821B1FI2|petrov_maksim|**7/7**|
+|3821B1FI2|soloninko_andrey|6/7|
+|3821B1FI2|travin_maksim|**7/7**|
+|3821B1FI2|zakharov_artem|**7/7**|
+|3821B1FI2|zawadowski_jan|**7/7**|
 
-Passed: 0
+Passed: 8
 
 ## 3821B1FI3
 |Group|Name|Passed|
 |-----|----|------|
-|3821B1FI3|durandin_vladimir|1/7|
-|3821B1FI3|ivanov_nikita|0/7|
-|3821B1FI3|kulikov_artem|3/7|
+|3821B1FI3|benduyzhko_tatiana|**7/7**|
+|3821B1FI3|durandin_vladimir|**7/7**|
+|3821B1FI3|ivanov_nikita|**7/7**|
+|3821B1FI3|korablev_nikita|**7/7**|
+|3821B1FI3|kulaev_zhenya|**7/7**|
+|3821B1FI3|kulagin_aleksandr|**7/7**|
+|3821B1FI3|kulikov_artem|**7/7**|
+|3821B1FI3|kuznetsov_artyom|**7/7**|
+|3821B1FI3|pivovarov_alexey|**7/7**|
+|3821B1FI3|polozov_vladislav|**7/7**|
+|3821B1FI3|prokofev_kirill|**7/7**|
+|3821B1FI3|ryabkov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
+|3821B1FI3|safarov_nurlan|**7/7**|
+|3821B1FI3|safronov_mikhail|6/7|
+|3821B1FI3|savotina_valeria|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
+|3821B1FI3|tyulkina_olga|**7/7**|
+|3821B1FI3|vasilev_ivan|**7/7**|
+|3821B1FI3|volodin_evgeniy|6/7|
 
-Passed: 2
+Passed: 18
 
-**Total Passed: 2**
+**Total Passed: 33**
