@@ -1,5 +1,0 @@
-In file included from /home/crazyproger/sandbox/oneapi-2025/3821B1FI2/2_integral_oneapi/kazantsev_evgeny/integral_oneapi.cpp:1:
-/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/2_integral_oneapi/kazantsev_evgeny/integral_oneapi.h:7:2: error: #endif without #if
-    7 | #endif  // __INTEGRAL_ONEAPI_H
-      |  ^
-1 error generated.
