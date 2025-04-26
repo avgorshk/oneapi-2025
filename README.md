@@ -578,7 +578,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|kashirin_alexander|0.3994|
 |**REF**|**REF**|**0.6662**|
 |3821B1FI1|pushkarev_ilya|0.6729|
-|3821B1FI3|volodin_evgeniy|BUILD FAILED|
+|3821B1FI3|volodin_evgeniy|TEST FAILED|
 |3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 ## 5_jacobi_shared_oneapi (4096 elements)
