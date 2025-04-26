@@ -2,7 +2,7 @@
 #include <oneapi/mkl.hpp>
 #include <vector>
 
-std::vector<float> GemmMklONEAPI(
+std::vector<float> GemmMKLONEAPI(
     const std::vector<float>& a, const std::vector<float>& b,
     size_t size, sycl::device device) {
     std::vector<float> ans(size * size, 0.0f);

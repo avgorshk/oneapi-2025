@@ -4,6 +4,8 @@
 #include <vector>
 #include <sycl/sycl.hpp>
 
+constexpr auto ITERATIONS = 1024;
+
 std::vector<float> JacobiAccONEAPI(const std::vector<float> a,
                                    const std::vector<float> b,
                                    float accuracy, sycl::device device);

@@ -2,7 +2,10 @@
 #define __JACOBI_DEV_ONEAPI_H
 
 #include <vector>
+
 #include <sycl/sycl.hpp>
+
+constexpr auto ITERATIONS = 1024;
 
 std::vector<float> JacobiDevONEAPI(const std::vector<float> a,
                                    const std::vector<float> b,
