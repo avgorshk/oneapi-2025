@@ -450,6 +450,7 @@ std::vector<float> GemmMklONEAPI(
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI1|shipitsin_alex|0.0334|
 |3821B1FI1|bonyuk_peter|0.0356|
 |3821B1FI1|bodrov_daniil|0.0366|
 |3821B1FI3|pivovarov_alexey|0.0367|
@@ -483,7 +484,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|1.4479|
 |3821B1FI3|kulaev_zhenya|1.4486|
 |3821B1FI3|benduyzhko_tatiana|1.6310|
-|3821B1FI1|shipitsin_alex|TOO SLOW|
 |3821B1FI1|shmelev_ivan|TOO SLOW|
 |3821B1FI1|pushkarev_ilya|BUILD FAILED|
 |3821B1FI2|kazantsev_evgeny|BUILD FAILED|
@@ -705,10 +705,10 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|lysanova_julia|**7/7**|
 |3821B1FI1|mirzakhmedov_alexander|**7/7**|
 |3821B1FI1|pushkarev_ilya|3/7|
-|3821B1FI1|shipitsin_alex|6/7|
+|3821B1FI1|shipitsin_alex|**7/7**|
 |3821B1FI1|shmelev_ivan|6/7|
 
-Passed: 6
+Passed: 7
 
 ## 3821B1FI2
 |Group|Name|Passed|
@@ -750,4 +750,4 @@ Passed: 6
 
 Passed: 17
 
-**Total Passed: 29**
+**Total Passed: 30**
