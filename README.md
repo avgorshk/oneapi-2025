@@ -612,11 +612,13 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|zawadowski_jan|0.3608|
 |3821B1FI1|kashirin_alexander|0.3695|
 |**REF**|**REF**|**0.6341**|
+|3821B1FI2|kostanyan_arsen|0.8133|
 |3821B1FI3|safronov_mikhail|BUILD FAILED|
 
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
 |-----|----|------|
+|3821B1FI2|kostanyan_arsen|0.8220|
 |3821B1FI3|tyulkina_olga|0.8278|
 |3821B1FI2|travin_maksim|0.8332|
 |3821B1FI2|kazantsev_evgeny|0.8484|
@@ -678,6 +680,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sharapov_georgiy|0.8169|
 |3821B1FI1|mirzakhmedov_alexander|0.8302|
 |3821B1FI3|ivanov_nikita|0.8374|
+|3821B1FI2|kostanyan_arsen|0.8474|
 |3821B1FI3|volodin_evgeniy|0.8689|
 |3821B1FI2|kostin_artem|0.9371|
 |3821B1FI1|shmelev_ivan|0.9394|
@@ -715,7 +718,7 @@ Passed: 7
 |-----|----|------|
 |3821B1FI2|isaev_dmitrii|**7/7**|
 |3821B1FI2|kazantsev_evgeny|6/7|
-|3821B1FI2|kostanyan_arsen|4/7|
+|3821B1FI2|kostanyan_arsen|**7/7**|
 |3821B1FI2|kostin_artem|**7/7**|
 |3821B1FI2|loginov_maxim|**7/7**|
 |3821B1FI2|petrov_maksim|6/7|
@@ -723,7 +726,7 @@ Passed: 7
 |3821B1FI2|zakharov_artem|**7/7**|
 |3821B1FI2|zawadowski_jan|**7/7**|
 
-Passed: 6
+Passed: 7
 
 ## 3821B1FI3
 |Group|Name|Passed|
@@ -750,4 +753,4 @@ Passed: 6
 
 Passed: 17
 
-**Total Passed: 30**
+**Total Passed: 31**
