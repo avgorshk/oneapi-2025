@@ -695,6 +695,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|isaev_dmitrii|0.4872|
 |3821B1FI2|kazantsev_evgeny|0.6009|
 |3821B1FI2|loginov_maxim|0.6507|
+|3821B1FI3|safronov_mikhail|0.6646|
 |3821B1FI2|zawadowski_jan|0.6787|
 |3821B1FI3|kuznetsov_artyom|0.6912|
 |3821B1FI3|pivovarov_alexey|0.7002|
@@ -731,7 +732,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|korablev_nikita|0.9860|
 |3821B1FI1|bodrov_daniil|0.9925|
 |3821B1FI3|polozov_vladislav|1.0043|
-|3821B1FI3|safronov_mikhail|BUILD FAILED|
 |3821B1FI2|nogin_denis|BUILD FAILED|
 
 # Tasks Done
@@ -785,7 +785,7 @@ Passed: 10
 |3821B1FI3|ryabkov_vladislav|**7/7**|
 |3821B1FI3|sadikov_damir|**7/7**|
 |3821B1FI3|safarov_nurlan|**7/7**|
-|3821B1FI3|safronov_mikhail|6/7|
+|3821B1FI3|safronov_mikhail|**7/7**|
 |3821B1FI3|savotina_valeria|**7/7**|
 |3821B1FI3|sharapov_georgiy|**7/7**|
 |3821B1FI3|simonyan_suren|**7/7**|
@@ -793,6 +793,6 @@ Passed: 10
 |3821B1FI3|vasilev_ivan|**7/7**|
 |3821B1FI3|volodin_evgeniy|**7/7**|
 
-Passed: 20
+Passed: 21
 
-**Total Passed: 38**
+**Total Passed: 39**
