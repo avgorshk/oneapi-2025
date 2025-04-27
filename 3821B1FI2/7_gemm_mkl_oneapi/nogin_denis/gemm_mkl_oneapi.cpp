@@ -13,13 +13,13 @@ std::vector<float> GemmMklONEAPI(const std::vector<float> a,
   {
     sycl::buffer<float> buf_a(a.data(), a.size());
     sycl::buffer<float> buf_b(b.data(), b.size());
-    sycl::buffer<float> buf_res(res.data(), res.size());
+    sycl::buffer<float> buf_ans(res.data(), res.size());
 
-    auto nontrres = oneapi::mkl::trrespose::nontrres;
+    auto nontrans = oneapi::mkl::transpose::nontrans;
 
-    oneapi::mkl::blas::row_major::gemm(queue, nontrres, nontrres, size, size,
+    oneapi::mkl::blas::row_major::gemm(queue, nontrans, nontrans, size, size,
                                        size, 1, buf_a, size, buf_b, size, 0,
-                                       buf_res, size);
+                                       buf_ans, size);
   }
 
   return res;
