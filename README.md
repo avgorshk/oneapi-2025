@@ -732,6 +732,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|bodrov_daniil|0.9925|
 |3821B1FI3|polozov_vladislav|1.0043|
 |3821B1FI3|safronov_mikhail|BUILD FAILED|
+|3821B1FI2|nogin_denis|BUILD FAILED|
 
 # Tasks Done
 ## 3821B1FI1

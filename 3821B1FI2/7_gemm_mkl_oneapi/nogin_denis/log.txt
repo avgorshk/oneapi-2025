@@ -1,0 +1,15 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/7_gemm_mkl_oneapi/nogin_denis/gemm_mkl_oneapi.cpp:18:34: error: no member named 'trrespose' in namespace 'oneapi::mkl'; did you mean 'transpose'?
+   18 |     auto nontrres = oneapi::mkl::trrespose::nontrres;
+      |                     ~~~~~~~~~~~~~^~~~~~~~~
+      |                                  transpose
+/opt/intel/oneapi/mkl/2025.0/include/oneapi/mkl/types.hpp:29:12: note: 'transpose' declared here
+   29 | enum class transpose : char {
+      |            ^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/7_gemm_mkl_oneapi/nogin_denis/gemm_mkl_oneapi.cpp:18:45: error: no member named 'nontrres' in 'oneapi::mkl::transpose'; did you mean 'nontrans'?
+   18 |     auto nontrres = oneapi::mkl::trrespose::nontrres;
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+      |                                             nontrans
+/opt/intel/oneapi/mkl/2025.0/include/oneapi/mkl/types.hpp:30:5: note: 'nontrans' declared here
+   30 |     nontrans = 0,
+      |     ^
+2 errors generated.
