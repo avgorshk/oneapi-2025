@@ -1,0 +1,372 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:22:6: error: cannot initialize a variable of type 'float' with an rvalue of type 'float *'
+   22 |                    b_dev            = sycl::malloc_device<float>(n, queue),
+      |                    ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:23:6: error: cannot initialize a variable of type 'float' with an rvalue of type 'float *'
+   23 |                    res_dev      = sycl::malloc_device<float>(n, queue),
+      |                    ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:24:6: error: cannot initialize a variable of type 'float' with an rvalue of type 'float *'
+   24 |                    res_prev_dev = sycl::malloc_device<float>(n, queue),
+      |                    ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:25:6: error: cannot initialize a variable of type 'float' with an rvalue of type 'float *'
+   25 |                    error_dev    = sycl::malloc_device<float>(1, queue);
+      |                    ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:28:11: error: no matching member function for call to 'memcpy'
+   28 |     queue.memcpy(b_dev, b.data(), n * sizeof(float));
+      |     ~~~~~~^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:589:9: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+  589 |   event memcpy(
+      |         ^
+  590 |       void *Dest, const void *Src, size_t Count,
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1136:9: note: candidate template ignored: could not match 'ext::oneapi::experimental::device_global<T, PropertyListT>' against 'float'
+ 1136 |   event memcpy(
+      |         ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1216:9: note: candidate template ignored: could not match 'ext::oneapi::experimental::device_global<T, PropertyListT>' against 'const float *'
+ 1216 |   event memcpy(
+      |         ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:605:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  605 |   event memcpy(
+      |         ^
+  606 |       void *Dest, const void *Src, size_t Count, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  607 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:622:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  622 |   event memcpy(
+      |         ^
+  623 |       void *Dest, const void *Src, size_t Count,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  624 |       const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  625 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1076:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1076 |   event memcpy(
+      |         ^
+ 1077 |       ext::oneapi::experimental::device_global<T, PropertyListT> &Dest,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1078 |       const void *Src, size_t NumBytes, size_t Offset,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1079 |       const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1080 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1116:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1116 |   event memcpy(
+      |         ^
+ 1117 |       ext::oneapi::experimental::device_global<T, PropertyListT> &Dest,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1118 |       const void *Src, size_t NumBytes, size_t Offset, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1119 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1157:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1157 |   event memcpy(
+      |         ^
+ 1158 |       void *Dest,
+      |       ~~~~~~~~~~~
+ 1159 |       const ext::oneapi::experimental::device_global<T, PropertyListT> &Src,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1160 |       size_t NumBytes, size_t Offset, const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1161 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1195:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1195 |   event memcpy(
+      |         ^
+ 1196 |       void *Dest,
+      |       ~~~~~~~~~~~
+ 1197 |       const ext::oneapi::experimental::device_global<T, PropertyListT> &Src,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1198 |       size_t NumBytes, size_t Offset, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1199 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:30:11: error: no matching member function for call to 'memset'
+   30 |     queue.memset(res_dev, 0.0f, n * sizeof(float));
+      |     ~~~~~~^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:545:9: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+  545 |   event memset(
+      |         ^
+  546 |       void *Ptr, int Value, size_t Count,
+      |       ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:559:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  559 |   event memset(
+      |         ^
+  560 |       void *Ptr, int Value, size_t Count, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  561 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:574:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  574 |   event memset(
+      |         ^
+  575 |       void *Ptr, int Value, size_t Count, const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  576 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:31:11: error: no matching member function for call to 'memset'
+   31 |     queue.memset(error_dev, 0.0f, sizeof(float));
+      |     ~~~~~~^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:545:9: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+  545 |   event memset(
+      |         ^
+  546 |       void *Ptr, int Value, size_t Count,
+      |       ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:559:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  559 |   event memset(
+      |         ^
+  560 |       void *Ptr, int Value, size_t Count, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  561 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:574:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  574 |   event memset(
+      |         ^
+  575 |       void *Ptr, int Value, size_t Count, const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  576 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:38:26: error: no matching function for call to 'reduction'
+   38 |         auto reduction = sycl::reduction(error_dev, sycl::maximum<float>());
+      |                          ^~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2858:6: note: candidate template ignored: could not match 'T *' against 'float'
+ 2858 | auto reduction(T *Var, BinaryOperation Combiner,
+      |      ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2898:6: note: candidate template ignored: could not match 'span<T, Extent>' against 'float'
+ 2898 | auto reduction(span<T, Extent> Span, BinaryOperation Combiner,
+      |      ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2843:6: note: candidate function template not viable: requires at least 3 arguments, but 2 were provided
+ 2843 | auto reduction(buffer<T, 1, AllocatorT> Var, handler &CGH,
+      |      ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2844 |                BinaryOperation Combiner, const property_list &PropList = {}) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2883:6: note: candidate function template not viable: requires at least 3 arguments, but 2 were provided
+ 2883 | auto reduction(T *Var, const T &Identity, BinaryOperation Combiner,
+      |      ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2884 |                const property_list &PropList = {}) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2911:6: note: candidate function template not viable: requires at least 3 arguments, but 2 were provided
+ 2911 | auto reduction(span<T, Extent> Span, const T &Identity,
+      |      ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2912 |                BinaryOperation Combiner, const property_list &PropList = {}) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/reduction.hpp:2870:6: note: candidate function template not viable: requires at least 4 arguments, but 2 were provided
+ 2870 | auto reduction(buffer<T, 1, AllocatorT> Var, handler &CGH, const T &Identity,
+      |      ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2871 |                BinaryOperation Combiner, const property_list &PropList = {}) {
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:43:26: error: subscripted value is not an array, pointer, or vector
+   43 |           float x = b_dev[i];
+      |                     ~~~~~^~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:47:51: error: subscripted value is not an array, pointer, or vector
+   47 |               x -= a_dev[i * n + j] * res_prev_dev[j];
+      |                                       ~~~~~~~~~~~~^~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:50:18: error: subscripted value is not an array, pointer, or vector
+   50 |           res_dev[i] = x;
+      |           ~~~~~~~^~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:51:52: error: subscripted value is not an array, pointer, or vector
+   51 |           error.combine(sycl::fabs(x - res_prev_dev[i]));
+      |                                        ~~~~~~~~~~~~^~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:55:13: error: no matching member function for call to 'memcpy'
+   55 |       queue.memcpy(&error, error_dev, sizeof(float)).wait();
+      |       ~~~~~~^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:589:9: note: candidate function not viable: no known conversion from 'float' to 'const void *' for 2nd argument; take the address of the argument with &
+  589 |   event memcpy(
+      |         ^
+  590 |       void *Dest, const void *Src, size_t Count,
+      |                   ~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1136:9: note: candidate template ignored: could not match 'ext::oneapi::experimental::device_global<T, PropertyListT>' against 'float *'
+ 1136 |   event memcpy(
+      |         ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1216:9: note: candidate template ignored: could not match 'ext::oneapi::experimental::device_global<T, PropertyListT>' against 'float'
+ 1216 |   event memcpy(
+      |         ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:605:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  605 |   event memcpy(
+      |         ^
+  606 |       void *Dest, const void *Src, size_t Count, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  607 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:622:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  622 |   event memcpy(
+      |         ^
+  623 |       void *Dest, const void *Src, size_t Count,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  624 |       const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  625 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1076:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1076 |   event memcpy(
+      |         ^
+ 1077 |       ext::oneapi::experimental::device_global<T, PropertyListT> &Dest,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1078 |       const void *Src, size_t NumBytes, size_t Offset,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1079 |       const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1080 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1116:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1116 |   event memcpy(
+      |         ^
+ 1117 |       ext::oneapi::experimental::device_global<T, PropertyListT> &Dest,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1118 |       const void *Src, size_t NumBytes, size_t Offset, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1119 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1157:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1157 |   event memcpy(
+      |         ^
+ 1158 |       void *Dest,
+      |       ~~~~~~~~~~~
+ 1159 |       const ext::oneapi::experimental::device_global<T, PropertyListT> &Src,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1160 |       size_t NumBytes, size_t Offset, const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1161 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1195:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1195 |   event memcpy(
+      |         ^
+ 1196 |       void *Dest,
+      |       ~~~~~~~~~~~
+ 1197 |       const ext::oneapi::experimental::device_global<T, PropertyListT> &Src,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1198 |       size_t NumBytes, size_t Offset, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1199 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:59:13: error: no matching member function for call to 'memset'
+   59 |       queue.memset(error_dev, 0.0f, sizeof(float)).wait();
+      |       ~~~~~~^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:545:9: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+  545 |   event memset(
+      |         ^
+  546 |       void *Ptr, int Value, size_t Count,
+      |       ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:559:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  559 |   event memset(
+      |         ^
+  560 |       void *Ptr, int Value, size_t Count, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  561 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:574:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  574 |   event memset(
+      |         ^
+  575 |       void *Ptr, int Value, size_t Count, const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  576 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:63:11: error: no matching member function for call to 'memcpy'
+   63 |     queue.memcpy(res.data(), res_dev, n * sizeof(float)).wait();
+      |     ~~~~~~^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:589:9: note: candidate function not viable: no known conversion from 'float' to 'const void *' for 2nd argument; take the address of the argument with &
+  589 |   event memcpy(
+      |         ^
+  590 |       void *Dest, const void *Src, size_t Count,
+      |                   ~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1136:9: note: candidate template ignored: could not match 'ext::oneapi::experimental::device_global<T, PropertyListT>' against 'float *'
+ 1136 |   event memcpy(
+      |         ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1216:9: note: candidate template ignored: could not match 'ext::oneapi::experimental::device_global<T, PropertyListT>' against 'float'
+ 1216 |   event memcpy(
+      |         ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:605:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  605 |   event memcpy(
+      |         ^
+  606 |       void *Dest, const void *Src, size_t Count, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  607 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:622:9: note: candidate function not viable: requires at least 4 arguments, but 3 were provided
+  622 |   event memcpy(
+      |         ^
+  623 |       void *Dest, const void *Src, size_t Count,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  624 |       const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  625 |       const detail::code_location &CodeLoc = detail::code_location::current());
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1076:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1076 |   event memcpy(
+      |         ^
+ 1077 |       ext::oneapi::experimental::device_global<T, PropertyListT> &Dest,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1078 |       const void *Src, size_t NumBytes, size_t Offset,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1079 |       const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1080 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1116:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1116 |   event memcpy(
+      |         ^
+ 1117 |       ext::oneapi::experimental::device_global<T, PropertyListT> &Dest,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1118 |       const void *Src, size_t NumBytes, size_t Offset, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1119 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1157:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1157 |   event memcpy(
+      |         ^
+ 1158 |       void *Dest,
+      |       ~~~~~~~~~~~
+ 1159 |       const ext::oneapi::experimental::device_global<T, PropertyListT> &Src,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1160 |       size_t NumBytes, size_t Offset, const std::vector<event> &DepEvents,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1161 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/queue.hpp:1195:9: note: candidate function template not viable: requires at least 5 arguments, but 3 were provided
+ 1195 |   event memcpy(
+      |         ^
+ 1196 |       void *Dest,
+      |       ~~~~~~~~~~~
+ 1197 |       const ext::oneapi::experimental::device_global<T, PropertyListT> &Src,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1198 |       size_t NumBytes, size_t Offset, event DepEvent,
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1199 |       const detail::code_location &CodeLoc = detail::code_location::current()) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:66:5: error: no matching function for call to 'free'
+   66 |     sycl::free(b_dev, queue);
+      |     ^~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:60:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   60 | free(void *ptr, const queue &q,
+      | ^    ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:57:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   57 | free(void *ptr, const context &ctxt,
+      | ^    ~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:67:5: error: no matching function for call to 'free'
+   67 |     sycl::free(res_dev, queue);
+      |     ^~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:60:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   60 | free(void *ptr, const queue &q,
+      | ^    ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:57:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   57 | free(void *ptr, const context &ctxt,
+      | ^    ~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:68:5: error: no matching function for call to 'free'
+   68 |     sycl::free(res_prev_dev, queue);
+      |     ^~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:60:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   60 | free(void *ptr, const queue &q,
+      | ^    ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:57:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   57 | free(void *ptr, const context &ctxt,
+      | ^    ~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/4_jacobi_dev_oneapi/kanakov_roman/jacobi_dev_oneapi.cpp:69:5: error: no matching function for call to 'free'
+   69 |     sycl::free(error_dev, queue);
+      |     ^~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:60:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   60 | free(void *ptr, const queue &q,
+      | ^    ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/usm.hpp:57:1: note: candidate function not viable: no known conversion from 'float' to 'void *' for 1st argument; take the address of the argument with &
+   57 | free(void *ptr, const context &ctxt,
+      | ^    ~~~~~~~~~
+19 errors generated.

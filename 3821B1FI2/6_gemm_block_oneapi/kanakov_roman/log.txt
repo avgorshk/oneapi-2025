@@ -1,0 +1,15 @@
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/6_gemm_block_oneapi/kanakov_roman/gemm_block_oneapi.cpp:18:13: error: template specialization requires 'template<>'
+   16 |     sycl::buffer<float> a_buf(a.data(), size * size),
+      |     template<> 
+   17 |                                                 b_buf(b.data(), size * size),
+   18 |                                                 sycl::buffer<float> res_buf(res.data(), size * size);
+      |                                                       ^     ~~~~~~~
+error: templates can only be declared in namespace or class scope
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/6_gemm_block_oneapi/kanakov_roman/gemm_block_oneapi.cpp:18:26: error: expected ';' at end of declaration
+   18 |                                                 sycl::buffer<float> res_buf(res.data(), size * size);
+      |                                                                    ^
+      |                                                                    ;
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI2/6_gemm_block_oneapi/kanakov_roman/gemm_block_oneapi.cpp:24:22: error: use of undeclared identifier 'res_buf'
+   24 |       auto out_res = res_buf.get_access<sycl::access::mode::write>(handler);
+      |                      ^
+4 errors generated.
