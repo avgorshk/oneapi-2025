@@ -4,27 +4,26 @@
 #include <algorithm>
 
 void Permutations(dictionary_t& dictionary) {
-    std::unordered_map<std::string, std::vector<std::string>> groups;
+  std::unordered_map<std::string, std::vector<dictionary_t::iterator>> grouped;
+  
+  for (auto it = dictionary.begin(); it != dictionary.end(); ++it) {
+    auto key = it->first;
+    std::sort(key.begin(), key.end());
+    grouped[key].push_back(it);
+  }
 
-    for (const auto& [word, _] : dictionary) {
-        std::string key = word;
-        std::sort(key.begin(), key.end());
-        groups[key].push_back(word);
-    }
+  for (auto& [word, anagrams] : dictionary) {
+    auto key = word;
+    std::sort(key.begin(), key.end());
+    const auto& group = grouped.at(key);
 
-    for (const auto& pair : groups) {
-        const auto& anagrams = pair.second;
-        if (anagrams.size() < 2) continue;
-
-        for (const auto& word : anagrams) {
-            auto& related = dictionary[word];
-            related.reserve(related.size() + anagrams.size() - 1);
-
-            for (const auto& candidate : anagrams) {
-                if (candidate != word) {
-                    related.push_back(candidate);
-                }
-            }
+    if (group.size() > 1) {
+      auto& result = anagrams;
+      for (auto rit = group.rbegin(); rit != group.rend(); ++rit) {
+        if (*rit != dictionary.find(word)) {
+          result.push_back((*rit)->first);
         }
+      }
     }
+  }
 }
