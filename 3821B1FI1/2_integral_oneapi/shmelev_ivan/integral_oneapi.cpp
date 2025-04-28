@@ -1,30 +1,29 @@
 #include "integral_oneapi.h"
-#include <range.hpp>
-#include <reduction.hpp>
+#include <cmath>
 
 float IntegralONEAPI(float start, float end, int count, sycl::device device) {
-  float ans = 0.0f;
+    float hx = (end - start) / count;
+    float hy = (end - start) / count;
+    float integral_sum = 0.0f;
 
-  {
-    sycl::buffer<float> buf_ans(&ans, 1);
+    sycl::queue q(device);
 
-    sycl::queue queue(device);
+    q.submit([&](sycl::handler& h) {
+        sycl::range<2> num_items{count, count};
 
-    queue.submit([&](sycl::handler &cgh) {
-      auto reduction = sycl::reduction(buf_ans, cgh, sycl::plus<>());
+        h.parallel_for(num_items, [=](sycl::item<2> item) {
+            int i = item.get_id(0);
+            int j = item.get_id(1);
 
-      cgh.parallel_for(sycl::range<2>(count, count), reduction, [=](sycl::id<2> id, auto& sum) {
-        float Xi = start + (end - start) / count * id.get(0);
-        float Xi_1 = start + (end - start) / count * (id.get(0) + 1);
-        float Yi = start + (end - start) / count * id.get(1);
-        float Yi_1 = start + (end - start) / count * (id.get(1) + 1);
-        sum += sycl::sin((Xi + Xi_1) / 2.0f) * sycl::cos((Yi + Yi_1) / 2.0f) * (Xi_1 - Xi) * (Yi_1 - Yi);
-      });
+            float x = start + (i + 0.5f) * hx;
+            float y = start + (j + 0.5f) * hy;
+
+            float f_value = std::sin(x) * std::cos(y);
+
+            sycl::atomic<float>(integral_sum) += f_value * hx * hy;
+        });
     });
 
-    queue.wait();
-  }
-
-
-  return ans;
+    q.wait();
+    return integral_sum;
 }
