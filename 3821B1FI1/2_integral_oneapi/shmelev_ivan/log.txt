@@ -1,1 +1,42 @@
-Your application is too slow (> 2 seconds)
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:12:34: error: non-constant-expression cannot be narrowed from type 'int' to 'typename std::enable_if_t<(2 == 2), size_t>' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+   12 |         sycl::range<2> num_items{count, count};
+      |                                  ^~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:12:34: note: insert an explicit cast to silence this issue
+   12 |         sycl::range<2> num_items{count, count};
+      |                                  ^~~~~
+      |                                  static_cast<type>( )
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:12:41: error: non-constant-expression cannot be narrowed from type 'int' to 'size_t' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+   12 |         sycl::range<2> num_items{count, count};
+      |                                         ^~~~~
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:12:41: note: insert an explicit cast to silence this issue
+   12 |         sycl::range<2> num_items{count, count};
+      |                                         ^~~~~
+      |                                         static_cast<size_t>( )
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:23:19: warning: 'atomic<float>' is deprecated: sycl::atomic is deprecated since SYCL 2020 [-Wdeprecated-declarations]
+   23 |             sycl::atomic<float>(integral_sum) += f_value * hx * hy;
+      |                   ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/atomic.hpp:172:7: note: 'atomic<float>' has been explicitly marked deprecated here
+  172 | class __SYCL2020_DEPRECATED(
+      |       ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:62:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+   62 | #define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+      |                                        ^
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:53:38: note: expanded from macro '__SYCL_DEPRECATED'
+   53 | #define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+      |                                      ^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:23:13: error: no matching conversion for functional-style cast from 'const float' to 'sycl::atomic<float>'
+   23 |             sycl::atomic<float>(integral_sum) += f_value * hx * hy;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/atomic.hpp:173:51: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const float' to 'const atomic<float>' for 1st argument
+  173 |     "sycl::atomic is deprecated since SYCL 2020") atomic {
+      |                                                   ^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/atomic.hpp:173:51: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const float' to 'atomic<float>' for 1st argument
+  173 |     "sycl::atomic is deprecated since SYCL 2020") atomic {
+      |                                                   ^~~~~~
+/opt/intel/oneapi/compiler/2025.0/bin/compiler/../../include/sycl/atomic.hpp:197:3: note: candidate template ignored: could not match 'multi_ptr<pointerT, (address_space)1, IsDecorated>' against 'float'
+  197 |   atomic(multi_ptr<pointerT, addressSpace, IsDecorated> ptr)
+      |   ^
+/home/crazyproger/sandbox/oneapi-2025/3821B1FI1/2_integral_oneapi/shmelev_ivan/integral_oneapi.cpp:23:47: error: no viable overloaded '+='
+   23 |             sycl::atomic<float>(integral_sum) += f_value * hx * hy;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~
+1 warning and 4 errors generated.

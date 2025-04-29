@@ -501,7 +501,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|sadikov_damir|1.4479|
 |3821B1FI3|kulaev_zhenya|1.4486|
 |3821B1FI3|benduyzhko_tatiana|1.6310|
-|3821B1FI1|shmelev_ivan|TOO SLOW|
+|3821B1FI1|shmelev_ivan|BUILD FAILED|
 
 ## 3_jacobi_acc_oneapi (4096 elements)
 |Group|Name|Result|
