@@ -5,22 +5,24 @@
 #include <iterator>
 
 void Permutations(dictionary_t& dictionary) {
-  std::unordered_map<std::string, std::vector<std::string>> um;
-
-  for (const auto& [str_, _] : dictionary) {
-	std::string str = str_;
-	std::sort(str.begin(), str.end());
-	um[str].push_back(str);
+  std::unordered_map<std::string, std::vector<dictionary_t::iterator>> tmp;
+  for (auto it = dictionary.begin(); it != dictionary.end(); ++it) {
+    std::string key = it->first;
+    std::sort(key.begin(), key.end());
+    tmp[key].push_back(it);
   }
-
-  for (auto& [sorted_str, original_strings] : um) {
-	std::reverse(original_strings.begin(), original_strings.end());
-	for (const auto& original_str : original_strings)
-	  dictionary[original_str] = original_strings;
-  }
-
-  for (auto& [str, perms] : dictionary) {
-	perms.erase(std::remove(perms.begin(), perms.end(), str),
-	            perms.end());
+  for (auto it = dictionary.begin(); it != dictionary.end(); ++it) {
+    std::string key = it->first;
+    std::sort(key.begin(), key.end());
+    const std::vector<dictionary_t::iterator>& v = tmp.at(key);
+    if (v.size() > 1) {
+      std::vector<std::string>& v_res = it->second;
+      for (auto v_it = v.rbegin(); v_it != v.rend(); v_it++) {
+        const auto& _v_it = *v_it;
+        if (_v_it != it) {
+          v_res.push_back(_v_it->first);
+        }
+      }
+    }
   }
 }
