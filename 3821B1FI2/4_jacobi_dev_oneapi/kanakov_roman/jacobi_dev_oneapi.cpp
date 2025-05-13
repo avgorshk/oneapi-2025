@@ -1,3 +1,5 @@
+#include "jacobi_dev_oneapi.h"
+
 std::vector<float> JacobiDevONEAPI(const std::vector<float> a, const std::vector<float> b, float accuracy, sycl::device device) {
   static_assert(ITERATIONS >= 1, "More than 1 iteration");
   const size_t n = b.size();
