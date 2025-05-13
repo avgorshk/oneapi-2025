@@ -416,6 +416,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|shipitsin_alex|0.0053|
 |3821B1FI1|bodrov_daniil|0.0054|
 |3821B1FI3|pivovarov_alexey|0.0058|
+|3821B1FI2|kanakov_roman|0.0059|
 |3821B1FI3|prokofev_kirill|0.0059|
 |3821B1FI2|nogin_denis|0.0060|
 |3821B1FI2|kostanyan_arsen|0.0060|
@@ -452,7 +453,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI2|travin_maksim|0.0104|
 |3821B1FI3|polozov_vladislav|0.0107|
 |**REF**|**REF**|**0.8951**|
-|3821B1FI2|kanakov_roman|TEST FAILED|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|
@@ -628,6 +628,7 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|bonyuk_peter|0.1937|
 |3821B1FI2|isaev_dmitrii|0.1963|
 |3821B1FI3|prokofev_kirill|0.1971|
+|3821B1FI2|kanakov_roman|0.1972|
 |3821B1FI3|vasilev_ivan|0.2001|
 |3821B1FI3|ryabkov_vladislav|0.2002|
 |3821B1FI1|shipitsin_alex|0.2007|
@@ -648,7 +649,6 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI1|kashirin_alexander|0.3695|
 |**REF**|**REF**|**0.6341**|
 |3821B1FI2|kostanyan_arsen|0.8133|
-|3821B1FI2|kanakov_roman|BUILD FAILED|
 
 ## 6_gemm_block_oneapi (3072 elements)
 |Group|Name|Result|
@@ -694,10 +694,10 @@ std::vector<float> GemmMklONEAPI(
 |3821B1FI3|volodin_evgeniy|0.9248|
 |3821B1FI3|sadikov_damir|0.9324|
 |3821B1FI3|prokofev_kirill|0.9383|
+|3821B1FI2|kanakov_roman|0.9387|
 |3821B1FI1|kashirin_alexander|0.9719|
 |3821B1FI1|bonyuk_peter|0.9923|
 |3821B1FI1|bodrov_daniil|1.0162|
-|3821B1FI2|kanakov_roman|BUILD FAILED|
 
 ## 7_gemm_mkl_oneapi (3072 elements)
 |Group|Name|Result|
@@ -770,7 +770,7 @@ Passed: 11
 |Group|Name|Passed|
 |-----|----|------|
 |3821B1FI2|isaev_dmitrii|**7/7**|
-|3821B1FI2|kanakov_roman|3/7|
+|3821B1FI2|kanakov_roman|6/7|
 |3821B1FI2|kazantsev_evgeny|**7/7**|
 |3821B1FI2|kostanyan_arsen|**7/7**|
 |3821B1FI2|kostin_artem|**7/7**|
